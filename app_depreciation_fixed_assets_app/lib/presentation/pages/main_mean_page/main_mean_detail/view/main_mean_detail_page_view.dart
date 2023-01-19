@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
 import 'package:common/calculate_depreciation_fixed_assets.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/annual_rate_widget.dart';
@@ -12,7 +14,8 @@ import 'package:domain/enums/type_operation.dart';
 class MainMeanDetailPageView extends StatefulWidget {
   final TypeOperation typeOperation;
 
-  const MainMeanDetailPageView({Key? key, this.typeOperation = TypeOperation.newElement})
+  const MainMeanDetailPageView(
+      {Key? key, this.typeOperation = TypeOperation.newElement})
       : super(key: key);
 
   @override
@@ -79,12 +82,15 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
         width: double.infinity,
         child: ButtonWidget(
           callback: () {
-            final a = CalculateDepreciationFixedAssets().straightforwardCalculation();
+            log("[MainMeanDetailPageView]: straightforwardCalculation");
+            final a =
+                CalculateDepreciationFixedAssets().straightforwardCalculation();
             print(a.toString());
           },
           child: Text(
             "Расчет",
-            style: StylesManager.getBoldStyle(fontSize: FontSize.s16, color: ColorManager.white),
+            style: StylesManager.getBoldStyle(
+                fontSize: FontSize.s16, color: ColorManager.white),
           ),
         ),
       ));

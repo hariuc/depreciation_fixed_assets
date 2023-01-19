@@ -22,6 +22,7 @@ class DepreciationMethodWidget extends StatelessWidget {
               textStyle: StylesManager.getMediumStyle(
                 fontSize: FontSize.s10,
               ),
+              
               direction: Axis.horizontal,
               borderRadius: const BorderRadius.all(Radius.circular(AppSize.s8)),
               selectedBorderColor: ColorManager.blue700,

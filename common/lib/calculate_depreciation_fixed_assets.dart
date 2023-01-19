@@ -21,15 +21,13 @@ class CalculateDepreciationFixedAssets {
   }
 
   DateTime _getInitialDate({required DateTime initDate}) {
-    var day = initDate;
-
+    var day1 = initDate;
     while (true) {
-      final day1 = initDate.add(Duration(days: 1));
+      day1 = day1.add(Duration(days: 1));
       if (day1.day == 1) {
-        day = day1;
         break;
       }
     }
-    return day;
+    return day1;
   }
 }

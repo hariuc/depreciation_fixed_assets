@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 class NameMainMeanWidget extends StatelessWidget {
   final TextEditingController controller;
 
-  const NameMainMeanWidget({Key? key, required this.controller}) : super(key: key);
+  const NameMainMeanWidget({Key? key, required this.controller})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class NameMainMeanWidget extends StatelessWidget {
         decoration: InputDecoration(
           prefixIcon: const Icon(Icons.abc),
           border: const OutlineInputBorder(),
-          labelText: "Имя",
+          labelText: "Наименование",
           labelStyle: StylesManager.getLightStyle(
             fontSize: FontSize.s16,
           ),
