@@ -15,6 +15,7 @@ class DepreciationFixedAssetsApp extends StatelessWidget {
       locale: context.locale,
       debugShowCheckedModeBanner: false,
       routes: {
+        AppRouters.mainPageRoute: (_) => const MainPage(),
         AppRouters.mainMeanDetailPage: (_) => const MainMeanDetailPage(),
       },
       home: const MainPage(),
