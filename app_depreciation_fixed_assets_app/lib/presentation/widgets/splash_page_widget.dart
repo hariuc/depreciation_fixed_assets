@@ -1,12 +1,11 @@
 import 'dart:async';
 
 import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
+import 'package:depreciation_fixed_assets_app/routing/app_routers.dart';
 import 'package:flutter/material.dart';
 
 class SplashPageWidget extends StatefulWidget {
-  final String mainScreenRoute;
-
-  const SplashPageWidget({Key? key, required this.mainScreenRoute}) : super(key: key);
+  const SplashPageWidget({Key? key,}) : super(key: key);
 
   @override
   State<SplashPageWidget> createState() => _SplashPageWidgetState();
@@ -17,7 +16,9 @@ class _SplashPageWidgetState extends State<SplashPageWidget> {
   void initState() {
     super.initState();
     Timer(const Duration(milliseconds: DurationConstant.d3000), () {
-      Navigator.of(context).pushReplacementNamed(widget.mainScreenRoute);
+      Navigator.pushReplacementNamed(context, AppRouters.mainPageRoute);
+      //Navigator.pushAndRemoveUntil(context, newRoute, (route) => false)
+      //Navigator.of(context).pushReplacementNamed(widget.mainScreenRoute);
     });
   }
 
