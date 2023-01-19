@@ -12,6 +12,8 @@ dependencies:
     path: ../domain
   data:
     path: ../data
+  common:
+    path: ../common
 
   cupertino_icons: ^1.0.2
   equatable: ^2.0.5

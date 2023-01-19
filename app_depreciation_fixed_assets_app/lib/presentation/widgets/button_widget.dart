@@ -10,10 +10,10 @@ class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      height: AppSize.s40,
+      height: AppSize.s50,
       onPressed: callback,
       elevation: AppSize.s3,
-      color: ColorManager.blue300,
+      color: ColorManager.blue400,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSize.s8)),
       child: child,
     );

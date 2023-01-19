@@ -1,7 +1,7 @@
-name: data
+name: common
 description: A sample command-line application.
 version: 1.0.0
-
+# homepage: https://www.example.com
 
 environment:
   sdk: '>=2.18.6 <3.0.0'
@@ -9,15 +9,11 @@ environment:
 dependencies:
   domain:
     path: ../domain
-  common:
-    path: ../common
-  get_it: ^7.2.0
-  equatable: ^2.0.5
-  json_annotation: ^4.7.0
-  objectbox: ^1.7.1
+  data:
+    path: ../data
+  depreciation_fixed_assets_app:
+    path: ../app_depreciation_fixed_assets_app
 
 dev_dependencies:
   lints: ^2.0.0
   test: ^1.16.0
-  build_runner:
-  json_serializable:
