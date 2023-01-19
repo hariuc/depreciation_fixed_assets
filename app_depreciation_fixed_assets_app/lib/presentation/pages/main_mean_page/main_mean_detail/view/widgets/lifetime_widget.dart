@@ -21,7 +21,7 @@ class LifeTimeWidget extends StatelessWidget {
           border: const OutlineInputBorder(),
           labelText: "Срок эксплуатации (лет)",
           labelStyle: StylesManager.getLightStyle(
-            fontSize: FontSize.s12,
+            fontSize: FontSize.s14,
           ),
         ));
   }

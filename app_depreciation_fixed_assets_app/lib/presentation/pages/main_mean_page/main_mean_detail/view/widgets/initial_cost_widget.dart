@@ -2,10 +2,10 @@ import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class AnnualRateWidget extends StatelessWidget {
+class InitialCostWidget extends StatelessWidget {
   final TextEditingController controller;
 
-  const AnnualRateWidget({Key? key, required this.controller}) : super(key: key);
+  const InitialCostWidget({Key? key, required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class AnnualRateWidget extends StatelessWidget {
         decoration: InputDecoration(
           prefixIcon: const Icon(Icons.abc),
           border: const OutlineInputBorder(),
-          labelText: "Годовая норма (%)",
+          labelText: "Первоначальная стоимость",
           labelStyle: StylesManager.getLightStyle(
             fontSize: FontSize.s14,
           ),

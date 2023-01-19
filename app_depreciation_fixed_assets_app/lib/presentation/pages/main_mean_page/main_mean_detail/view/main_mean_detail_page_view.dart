@@ -2,12 +2,12 @@ import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/depreciation_method_cubit.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/annual_rate_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/depreciation_method_widget.dart';
+import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/initial_cost_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/lifetime_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/name_main_mean_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:domain/enums/type_operation.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainMeanDetailPageView extends StatefulWidget {
   final TypeOperation typeOperation;
@@ -22,7 +22,8 @@ class MainMeanDetailPageView extends StatefulWidget {
 class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
   final _nameController = TextEditingController();
   final _lifeTimeController = TextEditingController();
-  final _anualRateController = TextEditingController();
+  final _yearRateController = TextEditingController();
+  final _initCostController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -44,37 +45,35 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
 
     list
       ..add(const SizedBox(
-        height: AppSize.s16,
+        height: AppSize.s12,
       ))
       ..add(NameMainMeanWidget(
         controller: _nameController,
       ))
       ..add(const SizedBox(
-        height: AppSize.s16,
+        height: AppSize.s12,
       ))
       ..add(const DepreciationMethodWidget())
       ..add(const SizedBox(
-        height: AppSize.s16,
+        height: AppSize.s12,
       ))
-      ..add(Visibility(
-          visible: true,
-          child: Row(
-            children: [
-              Expanded(
-                  child: LifeTimeWidget(
-                controller: _lifeTimeController,
-              )),
-              const SizedBox(
-                width: AppSize.s10,
-              ),
-              Expanded(
-                  child: AnnualRateWidget(
-                controller: _anualRateController,
-              )),
-            ],
-          )))
+      ..add(InitialCostWidget(
+        controller: _initCostController,
+      ))
       ..add(const SizedBox(
-        height: AppSize.s16,
+        height: AppSize.s12,
+      ))
+      ..add(LifeTimeWidget(
+        controller: _lifeTimeController,
+      ))
+      ..add(const SizedBox(
+        height: AppSize.s12,
+      ))
+      ..add(AnnualRateWidget(
+        controller: _yearRateController,
+      ))
+      ..add(const SizedBox(
+        height: AppSize.s12,
       ))
       ..add(SizedBox(
         width: double.infinity,
@@ -95,6 +94,7 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
     super.dispose();
     _nameController.dispose();
     _lifeTimeController.dispose();
-    _anualRateController.dispose();
+    _yearRateController.dispose();
+    _initCostController.dispose();
   }
 }
