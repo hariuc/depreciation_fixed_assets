@@ -13,7 +13,7 @@ part 'resources/assets_manager.dart';
 
 part 'resources/values_manager.dart';
 
-// const String localizationPath = "assets/i18n";
+const String localizationPath = "assets/i18n";
 // const String privacyPolicyPath =
 //     "https://github.com/hariuc/privacy_policy/blob/master/goods_info_privacy_policy%20.md";
 // const String whatIsNewPath =
