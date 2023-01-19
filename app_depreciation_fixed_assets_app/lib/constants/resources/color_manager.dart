@@ -15,6 +15,7 @@ class ColorManager {
   static const Color blue200 = Color(0xFF90CAF9);
   static const Color blue300 = Color(0xFF64B5F6);
   static const Color blue400 = Color(0xFF42A5F5);
+  static const Color blue700 = Color(0xFF1976D2);
 
   static const Color lightBlue100 = Color(0xFFB3E5FC);
   static const Color lightBlue200 = Color(0xFF81D4FA);

@@ -4,7 +4,8 @@ import 'package:flutter/services.dart';
 
 class LifeTimeWidget extends StatelessWidget {
   final TextEditingController controller;
-  const LifeTimeWidget({Key? key, required this.controller }) : super(key: key);
+
+  const LifeTimeWidget({Key? key, required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class LifeTimeWidget extends StatelessWidget {
           border: const OutlineInputBorder(),
           labelText: "Срок эксплуатации (лет)",
           labelStyle: StylesManager.getLightStyle(
-            fontSize: FontSize.s16,
+            fontSize: FontSize.s12,
           ),
         ));
   }

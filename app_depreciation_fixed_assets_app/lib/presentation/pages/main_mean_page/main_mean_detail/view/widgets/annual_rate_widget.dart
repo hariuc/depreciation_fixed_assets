@@ -21,7 +21,7 @@ class AnnualRateWidget extends StatelessWidget {
           border: const OutlineInputBorder(),
           labelText: "Годовая норма (%)",
           labelStyle: StylesManager.getLightStyle(
-            fontSize: FontSize.s16,
+            fontSize: FontSize.s12,
           ),
         ));
   }

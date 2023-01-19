@@ -24,8 +24,8 @@ class DepreciationMethodWidget extends StatelessWidget {
               ),
               direction: Axis.horizontal,
               borderRadius: const BorderRadius.all(Radius.circular(AppSize.s8)),
-              selectedBorderColor: ColorManager.red700,
-              fillColor: ColorManager.red200,
+              selectedBorderColor: ColorManager.blue700,
+              fillColor: ColorManager.blue300,
               selectedColor: ColorManager.white,
               constraints: BoxConstraints.expand(width: constraints.maxWidth / 4),
               onPressed: (int index) {
