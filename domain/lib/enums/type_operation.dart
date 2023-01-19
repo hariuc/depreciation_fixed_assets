@@ -1,0 +1,4 @@
+enum TypeOperation {
+  newElement,
+  editElement,
+}
