@@ -1,6 +1,8 @@
 import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
+import 'package:depreciation_fixed_assets_app/generated/locale_keys.loc.dart';
 import 'package:depreciation_fixed_assets_app/presentation/widgets/element_menu_drawer_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/widgets/logo_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class DrawerMenuWidget extends StatelessWidget {
@@ -31,19 +33,6 @@ class DrawerMenuWidget extends StatelessWidget {
       ..add(const SizedBox(
         height: AppSize.s8,
       ))
-      ..add(ElementMenuDrawerWidget(
-        title: LocaleKeys.settings.tr(),
-        color: ColorManager.black,
-        icon: const Icon(
-          Icons.settings,
-        ),
-        callback: () {
-          _goToPage(context: context, widget: const SettingsPage());
-        },
-      ))
-      ..add(const SizedBox(
-        height: AppSize.s8,
-      ))
       ..add(Container(
         height: AppSize.s1,
         color: Colors.black,
@@ -70,9 +59,9 @@ class DrawerMenuWidget extends StatelessWidget {
           Icons.info,
         ),
         callback: () async {
-          LoggerUtils().info(message: "[DrawerMenuWidget]: whatIsNew");
-
-          await launchUrl(Uri.parse(whatIsNewPath));
+          // LoggerUtils().info(message: "[DrawerMenuWidget]: whatIsNew");
+          //
+          // await launchUrl(Uri.parse(whatIsNewPath));
         },
       ))
       ..add(const SizedBox(
@@ -84,7 +73,7 @@ class DrawerMenuWidget extends StatelessWidget {
           Icons.help_center,
         ),
         callback: () async {
-          await launchUrl(Uri.parse(helpPath));
+          //await launchUrl(Uri.parse(helpPath));
         },
       ))
       ..add(const SizedBox(

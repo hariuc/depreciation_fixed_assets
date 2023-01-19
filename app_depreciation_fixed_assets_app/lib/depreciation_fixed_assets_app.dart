@@ -1,4 +1,5 @@
-
+import 'package:depreciation_fixed_assets_app/presentation/pages/main_page/main_page.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class DepreciationFixedAssetsApp extends StatelessWidget {
@@ -6,9 +7,12 @@ class DepreciationFixedAssetsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       debugShowCheckedModeBanner: false,
-      home: SizedBox(),
+      home: const MainPage(),
     );
   }
 }

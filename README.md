@@ -14,5 +14,4 @@ app https://pub.dev/packages/easy_localization
 in order to add new localization key:
 
 - add the key-value pair for english language into '/locales/en_us.json';
-- run **flutter pub run easy_localization:generate -S assets/i18n/ -s ru-RU.json -f keys -o
-  locale_keys.loc.dart**  to generate the key-constants;
+- run **flutter pub run easy_localization:generate -S assets/i18n/ -s ru-RU.json -f keys -o locale_keys.loc.dart**  to generate the key-constants;
