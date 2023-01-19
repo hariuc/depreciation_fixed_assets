@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
 import 'package:depreciation_fixed_assets_app/generated/locale_keys.loc.dart';
 import 'package:depreciation_fixed_assets_app/presentation/widgets/element_menu_drawer_widget.dart';
@@ -44,6 +46,7 @@ class DrawerMenuWidget extends StatelessWidget {
         title: LocaleKeys.softwareDevelopment.tr(),
         icon: ImageAssets.scsLogo(),
         callback: () async {
+          log("[DrawerMenuWidget]: softwareDevelopmentPath");
           // LoggerUtils()
           //     .info(message: "[DrawerMenuWidget]: softwareDevelopmentPath");
           //
@@ -59,8 +62,8 @@ class DrawerMenuWidget extends StatelessWidget {
           Icons.info,
         ),
         callback: () async {
-          // LoggerUtils().info(message: "[DrawerMenuWidget]: whatIsNew");
-          //
+          log("[DrawerMenuWidget]: whatIsNew");
+
           // await launchUrl(Uri.parse(whatIsNewPath));
         },
       ))
@@ -73,6 +76,7 @@ class DrawerMenuWidget extends StatelessWidget {
           Icons.help_center,
         ),
         callback: () async {
+          log("[DrawerMenuWidget]: help");
           //await launchUrl(Uri.parse(helpPath));
         },
       ))
@@ -85,8 +89,7 @@ class DrawerMenuWidget extends StatelessWidget {
           Icons.share,
         ),
         callback: () async {
-          // LoggerUtils().info(message: "[DrawerMenuWidget]: share");
-          //
+          log("[DrawerMenuWidget]: share");
           // Share.share(pathOnGoogePlay);
         },
       ))
@@ -99,8 +102,7 @@ class DrawerMenuWidget extends StatelessWidget {
           Icons.privacy_tip,
         ),
         callback: () async {
-          // LoggerUtils().info(message: "[DrawerMenuWidget]: privacyPolicy");
-          //
+          log("[DrawerMenuWidget]: privacyPolicy");
           // await launchUrl(Uri.parse(privacyPolicyPath));
         },
       ));
