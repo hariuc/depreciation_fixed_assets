@@ -1,5 +1,5 @@
 import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
-
+import 'package:common/calculate_depreciation_fixed_assets.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/annual_rate_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/depreciation_method_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/initial_cost_widget.dart';
@@ -78,7 +78,10 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
       ..add(SizedBox(
         width: double.infinity,
         child: ButtonWidget(
-          callback: () {},
+          callback: () {
+            final a = CalculateDepreciationFixedAssets().straightforwardCalculation();
+            print(a.toString());
+          },
           child: Text(
             "Расчет",
             style: StylesManager.getBoldStyle(fontSize: FontSize.s16, color: ColorManager.white),
