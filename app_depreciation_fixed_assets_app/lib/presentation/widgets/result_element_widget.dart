@@ -1,6 +1,7 @@
 import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
 import 'package:domain/modules/modules/main_mean/models/main_mean_index.dart';
 import 'package:flutter/material.dart';
+import 'package:common/date_format_utils.dart';
 
 class ResultElementWidget extends StatelessWidget {
   final ResultCalculateEntity resultCalculateEntity;
@@ -12,7 +13,7 @@ class ResultElementWidget extends StatelessWidget {
     return Card(
       elevation: AppSize.s3,
       child: ListTile(
-        leading: Text(resultCalculateEntity.dateTime.toIso8601String()),
+        title: Text(DateFormatUtils().formatDate(date: resultCalculateEntity.dateTime)),
         subtitle: Text(resultCalculateEntity.suma.toStringAsFixed(2)),
       ),
     );

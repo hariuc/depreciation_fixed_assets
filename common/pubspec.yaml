@@ -13,6 +13,7 @@ dependencies:
     path: ../data
   depreciation_fixed_assets_app:
     path: ../app_depreciation_fixed_assets_app
+  easy_localization: ^3.0.1
 
 dev_dependencies:
   lints: ^2.0.0

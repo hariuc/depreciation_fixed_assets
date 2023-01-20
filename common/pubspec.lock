@@ -121,7 +121,7 @@ packages:
     source: path
     version: "1.0.0"
   easy_localization:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: easy_localization
       url: "https://pub.dartlang.org"

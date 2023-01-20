@@ -28,8 +28,6 @@ class MainMeanDetailPageView extends StatefulWidget {
 class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
   final _nameController = TextEditingController();
   final _lifeTimeController = TextEditingController();
-
-  //final _yearRateController = TextEditingController();
   final _initCostController = TextEditingController();
 
   @override
@@ -78,6 +76,10 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
       ..add(const SizedBox(
         height: AppSize.s12,
       ))
+      ..add(ResultListWidget())
+      ..add(const SizedBox(
+        height: AppSize.s12,
+      ))
       ..add(SizedBox(
         width: double.infinity,
         child: ButtonWidget(
@@ -93,8 +95,7 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
       ))
       ..add(const SizedBox(
         height: AppSize.s12,
-      ))
-      ..add(const ResultListWidget());
+      ));
 
     return list;
   }
@@ -104,7 +105,6 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
     super.dispose();
     _nameController.dispose();
     _lifeTimeController.dispose();
-    //_yearRateController.dispose();
     _initCostController.dispose();
   }
 }
