@@ -22,35 +22,25 @@ class CalculateDepreciationFixedAssets {
       yearSet.add(indexDate.year);
       indexDate = indexDate.add(Duration(days: 1));
     }
-    //log("[CalculateDepreciationFixedAssets]: $dataList");
-    //log("[CalculateDepreciationFixedAssets]: $resultSet");
     final newList = <ListItem>[];
 
-    for (final yearElement in yearSet) {
-      newList.add(HeaderResultEntity(dateTime: DateTime(yearElement)));
-      for (final monthElement in resultSet) {
-        final tempList = list.where((element) =>
-            element.dateTime.year == yearElement && element.dateTime.month == monthElement.month);
-        var tempSuma = 0.0;
-        for (final element in tempList) {
-          tempSuma += element.suma;
+    var tempYear = 0;
+    for (final monthElement in resultSet) {
+      final tempList = list.where((element) =>
+          element.dateTime.year == monthElement.year &&
+          element.dateTime.month == monthElement.month);
+      if (tempList.isNotEmpty) {
+        if (tempYear != monthElement.year) {
+          newList.add(HeaderResultEntity(dateTime: DateTime(monthElement.year)));
+          tempYear = monthElement.year;
         }
-
-        newList.add(ResultCalculateEntity(dateTime: monthElement, suma: tempSuma));
       }
+      var tempSuma = 0.0;
+      for (final element in tempList) {
+        tempSuma += element.suma;
+      }
+      newList.add(ResultCalculateEntity(dateTime: monthElement, suma: tempSuma));
     }
-
-    // for (final monthElement in resultSet) {
-    //   final tempList = list.where((element) =>
-    //       element.dateTime.year == monthElement.year &&
-    //       element.dateTime.month == monthElement.month);
-    //   var tempSuma = 0.0;
-    //   for (final element in tempList) {
-    //     tempSuma += element.suma;
-    //   }
-    //
-    //   newList.add(ResultCalculateEntity(dateTime: monthElement, suma: tempSuma));
-    // }
     return newList;
   }
 
