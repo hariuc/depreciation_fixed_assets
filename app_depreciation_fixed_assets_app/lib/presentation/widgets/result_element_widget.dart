@@ -24,7 +24,7 @@ class ResultElementWidget extends StatelessWidget {
 
   Widget _dataWidget() {
     return Padding(
-      padding: const EdgeInsets.all(AppSize.s8),
+      padding: const EdgeInsets.all(AppSize.s10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [_firstWidget(), _secondWidget()],
@@ -45,7 +45,7 @@ class ResultElementWidget extends StatelessWidget {
             "dateFormat":
                 DateFormatUtils().formatDateMonthYear(date: resultCalculateEntity.dateTime)
           }),
-          style: StylesManager.getBoldStyle(fontSize: FontSize.s18),
+          style: StylesManager.getRegularStyle(fontSize: FontSize.s16),
         )
       ],
     );
@@ -60,7 +60,7 @@ class ResultElementWidget extends StatelessWidget {
         ),
         Text(
           resultCalculateEntity.suma.toStringAsFixed(2),
-          style: StylesManager.getBoldStyle(fontSize: FontSize.s18),
+          style: StylesManager.getRegularStyle(fontSize: FontSize.s16),
         )
       ],
     );
