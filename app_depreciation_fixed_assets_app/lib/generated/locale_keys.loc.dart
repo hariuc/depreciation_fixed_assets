@@ -8,5 +8,6 @@ abstract class  LocaleKeys {
   static const privacyPolicy = 'privacyPolicy';
   static const softwareDevelopment = 'softwareDevelopment';
   static const share = 'share';
+  static const dateFormat = 'dateFormat';
 
 }

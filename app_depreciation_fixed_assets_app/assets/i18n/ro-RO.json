@@ -4,5 +4,6 @@
   "help": "Ajutor",
   "privacyPolicy": "Politica de Confidențialitate",
   "softwareDevelopment": "Dezvoltare de software",
-  "share": "Acțiune"
+  "share": "Acțiune",
+  "dateFormat" : "{dateFormat}"
 }
