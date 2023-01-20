@@ -25,7 +25,7 @@ class InitialCostWidget extends StatelessWidget {
           },
           inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r"[0-9.]"))],
           decoration: InputDecoration(
-            prefixIcon: const Icon(Icons.abc),
+            prefixIcon: const Icon(Icons.paid),
             border: const OutlineInputBorder(),
             labelText:
                 stateValue ? LocaleKeys.initPriceLabel.tr() : LocaleKeys.initialCostLabelError.tr(),

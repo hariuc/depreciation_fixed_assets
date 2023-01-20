@@ -1,5 +1,5 @@
 {
-  "appName": "Goods info",
+  "appName": "Износ основных средств",
   "settings": "Настройки",
   "whatIsNew": "Что нового",
   "help": "Помощь",
@@ -12,5 +12,6 @@
   "initialCostLabelError" : "Необходимо заполнить поле. Первоначальная стоимость",
   "initPriceLabel" : "Первоначальная стоимость",
   "lifeTimeLabel" : "Срок эксплуатации (лет)",
-  "lifeTimeLabelError" : "Необходимо заполнить поле. Срок эксплуатации (лет)"
+  "lifeTimeLabelError" : "Необходимо заполнить поле. Срок эксплуатации (лет)",
+  "calculateOperation" : "Расчет"
 }

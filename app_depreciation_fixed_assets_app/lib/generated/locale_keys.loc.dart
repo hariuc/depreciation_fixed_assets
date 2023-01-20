@@ -14,5 +14,7 @@ abstract class  LocaleKeys {
   static const initialCostLabelError = 'initialCostLabelError';
   static const initPriceLabel = 'initPriceLabel';
   static const lifeTimeLabel = 'lifeTimeLabel';
+  static const lifeTimeLabelError = 'lifeTimeLabelError';
+  static const calculateOperation = 'calculateOperation';
 
 }

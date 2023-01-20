@@ -89,7 +89,7 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView>
             _calculateButtonAction(context: context);
           },
           child: Text(
-            "Расчет",
+            LocaleKeys.calculateOperation.tr(),
             style: StylesManager.getBoldStyle(fontSize: FontSize.s16, color: ColorManager.white),
           ),
         ),

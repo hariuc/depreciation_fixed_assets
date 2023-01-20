@@ -1,15 +1,16 @@
 {
-  "appName": "Goods info",
+  "appName": "Износ основных средств",
   "whatIsNew": "Ce mai e nou",
   "help": "Ajutor",
   "privacyPolicy": "Politica de Confidențialitate",
   "softwareDevelopment": "Dezvoltare de software",
   "share": "Acțiune",
-  "dateFormat" : "{dateFormat}",
-  "initialCostEmptyErrorMessage" : "Необходимо заполнить первоначальную стоимость",
-  "lifeTimeEmptyErrorMessage" : "Необходимо заполнить срок эксплуатации",
-  "initialCostLabelError" : "Необходимо заполнить поле",
-  "initPriceLabel" : "Первоначальная стоимость",
-  "lifeTimeLabel" : "Срок эксплуатации (лет)",
-  "lifeTimeLabelError" : "Необходимо заполнить поле. Срок эксплуатации (лет)"
+  "dateFormat": "{dateFormat}",
+  "initialCostEmptyErrorMessage": "Необходимо заполнить первоначальную стоимость",
+  "lifeTimeEmptyErrorMessage": "Необходимо заполнить срок эксплуатации",
+  "initialCostLabelError": "Необходимо заполнить поле",
+  "initPriceLabel": "Первоначальная стоимость",
+  "lifeTimeLabel": "Срок эксплуатации (лет)",
+  "lifeTimeLabelError": "Необходимо заполнить поле. Срок эксплуатации (лет)",
+  "calculateOperation": "Расчет"
 }

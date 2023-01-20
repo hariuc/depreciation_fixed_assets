@@ -13,7 +13,7 @@
     </queries>
 
    <application
-        android:label="depreciation_fixed_assets_app"
+        android:label="Износ ОС"
         android:name="${applicationName}"
         android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">

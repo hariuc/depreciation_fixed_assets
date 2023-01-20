@@ -11,15 +11,15 @@ class DepreciationFixedAssetsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      debugShowCheckedModeBanner: false,
-      routes: {
-        AppRouters.mainPageRoute: (_) => const MainPage(),
-        AppRouters.mainMeanDetailPage: (_) => const MainMeanDetailPage(),
-      },
-      home: const SplashPageWidget(),
-    );
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
+        debugShowCheckedModeBanner: false,
+        routes: {
+          AppRouters.mainPageRoute: (_) => const MainPage(),
+          AppRouters.mainMeanDetailPage: (_) => const MainMeanDetailPage(),
+        },
+        //home: const SplashPageWidget(),
+        home: const MainPage());
   }
 }

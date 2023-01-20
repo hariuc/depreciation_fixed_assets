@@ -31,7 +31,7 @@ class LifeTimeWidget extends StatelessWidget {
                 .changeValue(yearRate: controller.text.isEmpty ? 0 : int.parse(controller.text));
           },
           decoration: InputDecoration(
-            prefixIcon: const Icon(Icons.abc),
+            prefixIcon: const Icon(Icons.calendar_month),
             border: const OutlineInputBorder(),
             labelText:
                 stateValue ? LocaleKeys.lifeTimeLabel.tr() : LocaleKeys.lifeTimeLabelError.tr(),
