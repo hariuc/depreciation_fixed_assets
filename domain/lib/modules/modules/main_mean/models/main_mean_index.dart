@@ -10,3 +10,5 @@ part 'entities/main_mean_entity.dart';
 part 'entities/result_calculate_entity.dart';
 
 part 'entities/header_result_entity.dart';
+
+part 'entities/total_result_year_entity.dart';

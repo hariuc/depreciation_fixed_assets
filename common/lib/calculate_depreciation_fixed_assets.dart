@@ -25,6 +25,7 @@ class CalculateDepreciationFixedAssets {
     final newList = <ListItem>[];
 
     var tempYear = 0;
+    var sumaYear = 0.0;
     for (final monthElement in resultSet) {
       final tempList = list.where((element) =>
           element.dateTime.year == monthElement.year &&
@@ -38,8 +39,13 @@ class CalculateDepreciationFixedAssets {
       var tempSuma = 0.0;
       for (final element in tempList) {
         tempSuma += element.suma;
+        sumaYear += element.suma;
       }
       newList.add(ResultCalculateEntity(dateTime: monthElement, suma: tempSuma));
+      if (monthElement.month == 12) {
+        newList.add(TotalResultYearEntity(title: 'Итого', suma: sumaYear));
+        sumaYear = 0;
+      }
     }
     return newList;
   }
