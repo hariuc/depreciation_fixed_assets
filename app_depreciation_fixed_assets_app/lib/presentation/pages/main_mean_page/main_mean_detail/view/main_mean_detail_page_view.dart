@@ -7,6 +7,7 @@ import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/initial_cost_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/lifetime_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/name_main_mean_widget.dart';
+import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/year_rate_text_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:domain/enums/type_operation.dart';
@@ -14,8 +15,7 @@ import 'package:domain/enums/type_operation.dart';
 class MainMeanDetailPageView extends StatefulWidget {
   final TypeOperation typeOperation;
 
-  const MainMeanDetailPageView(
-      {Key? key, this.typeOperation = TypeOperation.newElement})
+  const MainMeanDetailPageView({Key? key, this.typeOperation = TypeOperation.newElement})
       : super(key: key);
 
   @override
@@ -25,20 +25,16 @@ class MainMeanDetailPageView extends StatefulWidget {
 class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
   final _nameController = TextEditingController();
   final _lifeTimeController = TextEditingController();
-  final _yearRateController = TextEditingController();
+
+  //final _yearRateController = TextEditingController();
   final _initCostController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: (Text("1")),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
-        child: Column(
-          children: _createColumnList(),
-        ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
+      child: Column(
+        children: _createColumnList(),
       ),
     );
   }
@@ -50,9 +46,9 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
       ..add(const SizedBox(
         height: AppSize.s12,
       ))
-      ..add(NameMainMeanWidget(
-        controller: _nameController,
-      ))
+      // ..add(NameMainMeanWidget(
+      //   controller: _nameController,
+      // ))
       ..add(const SizedBox(
         height: AppSize.s12,
       ))
@@ -72,9 +68,10 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
       ..add(const SizedBox(
         height: AppSize.s12,
       ))
-      ..add(AnnualRateWidget(
-        controller: _yearRateController,
-      ))
+      // ..add(AnnualRateWidget(
+      //   controller: _yearRateController,
+      // ))
+      ..add(const YearRateTextWidget())
       ..add(const SizedBox(
         height: AppSize.s12,
       ))
@@ -83,14 +80,12 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
         child: ButtonWidget(
           callback: () {
             log("[MainMeanDetailPageView]: straightforwardCalculation");
-            final a =
-                CalculateDepreciationFixedAssets().straightforwardCalculation();
+            final a = CalculateDepreciationFixedAssets().straightforwardCalculation();
             print(a.toString());
           },
           child: Text(
             "Расчет",
-            style: StylesManager.getBoldStyle(
-                fontSize: FontSize.s16, color: ColorManager.white),
+            style: StylesManager.getBoldStyle(fontSize: FontSize.s16, color: ColorManager.white),
           ),
         ),
       ));
@@ -103,7 +98,7 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
     super.dispose();
     _nameController.dispose();
     _lifeTimeController.dispose();
-    _yearRateController.dispose();
+    //_yearRateController.dispose();
     _initCostController.dispose();
   }
 }
