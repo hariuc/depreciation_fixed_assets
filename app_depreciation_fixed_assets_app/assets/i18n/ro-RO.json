@@ -10,5 +10,6 @@
   "lifeTimeEmptyErrorMessage" : "Необходимо заполнить срок эксплуатации",
   "initialCostLabelError" : "Необходимо заполнить поле",
   "initPriceLabel" : "Первоначальная стоимость",
-  "lifeTimeLabel" : "Срок эксплуатации (лет)"
+  "lifeTimeLabel" : "Срок эксплуатации (лет)",
+  "lifeTimeLabelError" : "Необходимо заполнить поле. Срок эксплуатации (лет)"
 }

@@ -32,7 +32,6 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView>
   final _initCostController = TextEditingController();
   late AnimationController _animationController;
   late Animation<double> _animation;
-  final _costFieldFocusNode = FocusNode();
 
   @override
   void initState() {
@@ -116,6 +115,9 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView>
     if (_initCostController.text.trim().isEmpty) {
       ShowMessage.showSnackBar(context, LocaleKeys.initialCostEmptyErrorMessage.tr());
       BlocProvider.of<InitialCostValidatorCubit>(context).changeValue(value: false);
+      if (_lifeTimeController.text.trim().isEmpty) {
+        BlocProvider.of<LifetimeValidatorCubit>(context).changeValue(value: false);
+      }
       return;
     }
 

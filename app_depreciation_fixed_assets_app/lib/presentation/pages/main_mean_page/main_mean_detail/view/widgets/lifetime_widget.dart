@@ -34,7 +34,7 @@ class LifeTimeWidget extends StatelessWidget {
             prefixIcon: const Icon(Icons.abc),
             border: const OutlineInputBorder(),
             labelText:
-                stateValue ? LocaleKeys.lifeTimeLabel.tr() : LocaleKeys.initialCostLabelError.tr(),
+                stateValue ? LocaleKeys.lifeTimeLabel.tr() : LocaleKeys.lifeTimeLabelError.tr(),
             labelStyle: stateValue
                 ? StylesManager.getLightStyle(
                     fontSize: FontSize.s14,

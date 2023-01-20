@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="scssoft.site.depreciation.fixed.assets.depreciation_fixed_assets_app">
+    package="scssoft.site.depreciation.fixed.assets">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
