@@ -8,4 +8,8 @@ class DateFormatUtils {
   String formatDateMonthYear({required DateTime date}) {
     return DateFormat("MMM yyyy").format(date).toString();
   }
+
+  String formatYear({required DateTime date}) {
+    return DateFormat("yyyy").format(date).toString();
+  }
 }

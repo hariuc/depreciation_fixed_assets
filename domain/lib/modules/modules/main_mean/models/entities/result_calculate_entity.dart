@@ -1,6 +1,6 @@
 part of main_mean_entity;
 
-class ResultCalculateEntity extends Entity with EquatableMixin {
+class ResultCalculateEntity extends Entity  with EquatableMixin implements ListItem{
   final DateTime dateTime;
   final double suma;
 
