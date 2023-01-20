@@ -1,4 +1,5 @@
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/depreciation_method_cubit.dart';
+import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/year_rate_cubit.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/main_mean_detail_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,9 +9,9 @@ class MainMeanDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => DepreciationMethodCubit(),
-      child: const MainMeanDetailPageView(),
-    );
+    return MultiBlocProvider(providers: [
+      BlocProvider(create: (context) => DepreciationMethodCubit()),
+      BlocProvider(create: (context) => YearRateCubit()),
+    ], child: const MainMeanDetailPageView());
   }
 }
