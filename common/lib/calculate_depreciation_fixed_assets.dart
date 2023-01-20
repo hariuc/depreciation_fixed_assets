@@ -47,6 +47,10 @@ class CalculateDepreciationFixedAssets {
         sumaYear = 0;
       }
     }
+
+    if (newList.isNotEmpty) {
+      newList.add(TotalResultYearEntity(title: 'Итого', suma: sumaYear));
+    }
     return newList;
   }
 
