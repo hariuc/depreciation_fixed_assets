@@ -31,9 +31,9 @@ class InitialCostWidget extends StatelessWidget {
                 stateValue ? LocaleKeys.initPriceLabel.tr() : LocaleKeys.initialCostLabelError.tr(),
             labelStyle: stateValue
                 ? StylesManager.getLightStyle(
-                    fontSize: FontSize.s14,
+                    fontSize: FontSize.s10,
                   )
-                : StylesManager.getLightStyle(fontSize: FontSize.s14, color: ColorManager.red400),
+                : StylesManager.getLightStyle(fontSize: FontSize.s10, color: ColorManager.red400),
           ));
     });
   }

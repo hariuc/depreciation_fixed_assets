@@ -6,11 +6,11 @@
   "softwareDevelopment": "Dezvoltare de software",
   "share": "Acțiune",
   "dateFormat": "{dateFormat}",
-  "initialCostEmptyErrorMessage": "Необходимо заполнить первоначальную стоимость",
-  "lifeTimeEmptyErrorMessage": "Необходимо заполнить срок эксплуатации",
-  "initialCostLabelError": "Необходимо заполнить поле",
-  "initPriceLabel": "Первоначальная стоимость",
-  "lifeTimeLabel": "Срок эксплуатации (лет)",
-  "lifeTimeLabelError": "Необходимо заполнить поле. Срок эксплуатации (лет)",
-  "calculateOperation": "Расчет"
+  "initialCostEmptyErrorMessage": "Este necesar să completați costul inițial",
+  "lifeTimeEmptyErrorMessage": "Este necesar să completați durata de viață",
+  "initialCostLabelError": "Este necesar să completați câmpul",
+  "initPriceLabel": "Costul inițial",
+  "lifeTimeLabel": "Durata de viață (ani)",
+  "lifeTimeLabelError": "Este necesar să completați câmpul. Durata de viață (ani)",
+  "calculateOperation": "Calculează"
 }

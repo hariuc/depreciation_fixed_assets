@@ -66,15 +66,29 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView>
       ..add(const SizedBox(
         height: AppSize.s12,
       ))
-      ..add(InitialCostWidget(
-        controller: _initCostController,
+      // ..add(InitialCostWidget(
+      //   controller: _initCostController,
+      // ))
+      ..add(Row(
+        children: [
+          Expanded(
+              child: InitialCostWidget(
+            controller: _initCostController,
+          )),
+          const SizedBox(
+            width: AppSize.s10,
+          ),
+          Expanded(child: LifeTimeWidget(
+            controller: _lifeTimeController,
+          )),
+        ],
       ))
-      ..add(const SizedBox(
-        height: AppSize.s12,
-      ))
-      ..add(LifeTimeWidget(
-        controller: _lifeTimeController,
-      ))
+      // ..add(const SizedBox(
+      //   height: AppSize.s12,
+      // ))
+      // ..add(LifeTimeWidget(
+      //   controller: _lifeTimeController,
+      // ))
       ..add(const SizedBox(
         height: AppSize.s12,
       ))
