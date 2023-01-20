@@ -1,18 +1,14 @@
 import 'dart:developer';
-
 import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
-import 'package:common/calculate_depreciation_fixed_assets.dart';
-import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/depreciation_method_cubit.dart';
+import 'package:depreciation_fixed_assets_app/generated/locale_keys.loc.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/depreciation_result_cubit.dart';
-import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/annual_rate_widget.dart';
-import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/depreciation_method_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/initial_cost_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/lifetime_widget.dart';
-import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/name_main_mean_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/result_list_widget.dart';
-import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/year_rate_text_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/widgets/button_widget.dart';
+import 'package:depreciation_fixed_assets_app/utils/show_message.dart';
 import 'package:domain/enums/depreciation_method.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:domain/enums/type_operation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,19 +23,44 @@ class MainMeanDetailPageView extends StatefulWidget {
   State<MainMeanDetailPageView> createState() => _MainMeanDetailPageViewState();
 }
 
-class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
+class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView>
+    with SingleTickerProviderStateMixin {
   final _nameController = TextEditingController();
   final _lifeTimeController = TextEditingController();
   final _initCostController = TextEditingController();
+  late AnimationController _animationController;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: DurationConstant.d1000));
+    _animation = Tween<double>(begin: 0.0, end: 1.0).animate(_animationController)
+      ..addListener(() {
+        setState(() {});
+      });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
-      child: Column(
-        children: _createColumnList(),
-      ),
+    return AnimatedBuilder(
+      animation: _animationController,
+      builder: (context, child) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
+          child: Column(
+            children: _createColumnList(),
+          ),
+        );
+      },
     );
+    // return Padding(
+    //   padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
+    //   child: Column(
+    //     children: _createColumnList(),
+    //   ),
+    // );
   }
 
   List<Widget> _createColumnList() {
@@ -49,16 +70,6 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
       ..add(const SizedBox(
         height: AppSize.s12,
       ))
-      // ..add(NameMainMeanWidget(
-      //   controller: _nameController,
-      // ))
-      // ..add(const SizedBox(
-      //   height: AppSize.s12,
-      // ))
-      // ..add(const DepreciationMethodWidget())
-      // ..add(const SizedBox(
-      //   height: AppSize.s12,
-      // ))
       ..add(InitialCostWidget(
         controller: _initCostController,
       ))
@@ -79,18 +90,7 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
         width: double.infinity,
         child: ButtonWidget(
           callback: () {
-            log("[MainMeanDetailPageView]: straightforwardCalculation");
-            final boolList = BlocProvider.of<DepreciationMethodCubit>(context).state;
-            var depreciationMethod = DepreciationMethod.straightforward;
-            if (boolList[1]) {
-              depreciationMethod = DepreciationMethod.production;
-            } else if (boolList[2]) {
-              depreciationMethod = DepreciationMethod.cumulative;
-            } else if (boolList[3]) {
-              depreciationMethod = DepreciationMethod.production;
-            }
-            BlocProvider.of<DepreciationResultCubit>(context)
-                .changeValue(depreciationMethod: depreciationMethod);
+            _calculateButtonAction(context: context);
           },
           child: Text(
             "Расчет",
@@ -108,8 +108,26 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
   @override
   void dispose() {
     super.dispose();
+    _animationController.dispose();
     _nameController.dispose();
     _lifeTimeController.dispose();
     _initCostController.dispose();
+  }
+
+  void _calculateButtonAction({required BuildContext context}) {
+    log("[MainMeanDetailPageView]: _calculateButtonAction");
+    if (_initCostController.text.trim().isEmpty) {
+      ShowMessage.showSnackBar(context, LocaleKeys.initialCostEmptyErrorMessage.tr());
+      return;
+    }
+
+    if (_lifeTimeController.text.trim().isEmpty) {
+      ShowMessage.showSnackBar(context, LocaleKeys.lifeTimeEmptyErrorMessage.tr());
+      return;
+    }
+    BlocProvider.of<DepreciationResultCubit>(context).changeValue(
+        depreciationMethod: DepreciationMethod.straightforward,
+        suma: double.parse(_initCostController.text),
+        yearDepreciation: int.parse(_lifeTimeController.text));
   }
 }

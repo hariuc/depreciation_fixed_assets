@@ -4,15 +4,15 @@ import 'package:domain/core/list_item.dart';
 import 'package:domain/modules/modules/main_mean/models/main_mean_index.dart';
 
 class CalculateDepreciationFixedAssets {
-  List<ListItem> straightforwardCalculation() {
+  List<ListItem> straightforwardCalculation({required double suma, required int yearDepreciation}) {
     final list = <ResultCalculateEntity>[];
 
     final dateNow = DateTime.now();
     final startDate = _getInitialDate(initDate: dateNow);
-    final endDate = startDate.add(Duration(days: 3 * 365));
+    final endDate = startDate.add(Duration(days: yearDepreciation * 365));
     var indexDate = startDate;
     final dataList = <Map<DateTime, double>>[];
-    final sumaDay = 20000.0 / (2 * 365);
+    final sumaDay = suma / (yearDepreciation * 365);
     final resultSet = <DateTime>{};
     final yearSet = <int>{};
     while (indexDate.compareTo(endDate) == -1) {
@@ -55,7 +55,6 @@ class CalculateDepreciationFixedAssets {
   }
 
   List<ListItem> cumulativeCalculation() {
-
     final newList = <ListItem>[];
     return newList;
   }

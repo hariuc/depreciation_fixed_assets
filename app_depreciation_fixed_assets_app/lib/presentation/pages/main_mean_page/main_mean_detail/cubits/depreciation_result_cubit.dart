@@ -7,18 +7,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class DepreciationResultCubit extends Cubit<List<ListItem>> {
   DepreciationResultCubit() : super([]);
 
-  void changeValue({required DepreciationMethod depreciationMethod}) {
+  void changeValue(
+      {required DepreciationMethod depreciationMethod,
+      required double suma,
+      required int yearDepreciation}) {
     log("[DepreciationResultCubit]: changeValue");
-    var resultList = <ListItem>[];
-    if (depreciationMethod == DepreciationMethod.straightforward) {
-      resultList = CalculateDepreciationFixedAssets().straightforwardCalculation();
-    } else if (depreciationMethod == DepreciationMethod.cumulative) {
-      resultList = CalculateDepreciationFixedAssets().cumulativeCalculation();
-    } else if (depreciationMethod == DepreciationMethod.production) {
-      resultList = CalculateDepreciationFixedAssets().productionCalculation();
-    } else if (depreciationMethod == DepreciationMethod.decreasingBalance) {
-      resultList = CalculateDepreciationFixedAssets().decreasingBalanceCalculation();
-    }
+    //var resultList = <ListItem>[];
+    // if (depreciationMethod == DepreciationMethod.straightforward) {
+    final resultList = CalculateDepreciationFixedAssets()
+        .straightforwardCalculation(suma: suma, yearDepreciation: yearDepreciation);
+    // } else if (depreciationMethod == DepreciationMethod.cumulative) {
+    //   resultList = CalculateDepreciationFixedAssets().cumulativeCalculation();
+    // } else if (depreciationMethod == DepreciationMethod.production) {
+    //   resultList = CalculateDepreciationFixedAssets().productionCalculation();
+    // } else if (depreciationMethod == DepreciationMethod.decreasingBalance) {
+    //   resultList = CalculateDepreciationFixedAssets().decreasingBalanceCalculation();
+    // }
 
     emit(resultList);
   }

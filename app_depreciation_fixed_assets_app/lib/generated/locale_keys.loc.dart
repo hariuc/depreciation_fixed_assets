@@ -9,5 +9,7 @@ abstract class  LocaleKeys {
   static const softwareDevelopment = 'softwareDevelopment';
   static const share = 'share';
   static const dateFormat = 'dateFormat';
+  static const initialCostEmptyErrorMessage = 'initialCostEmptyErrorMessage';
+  static const lifeTimeEmptyErrorMessage = 'lifeTimeEmptyErrorMessage';
 
 }

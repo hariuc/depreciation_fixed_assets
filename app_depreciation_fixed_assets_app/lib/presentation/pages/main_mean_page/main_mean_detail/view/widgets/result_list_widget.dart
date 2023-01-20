@@ -20,9 +20,9 @@ class ResultListWidget extends StatelessWidget {
         if (stateValue.isEmpty) {
           return const SizedBox();
         } else {
-          return AnimatedList(
-              initialItemCount: stateValue.length,
-              itemBuilder: (context, index, animation) {
+          return ListView.builder(
+              itemCount: stateValue.length,
+              itemBuilder: (context, index) {
                 if (stateValue[index] is HeaderResultEntity) {
                   final headerElement = stateValue[index] as HeaderResultEntity;
                   return HeaderResultElementWidget(

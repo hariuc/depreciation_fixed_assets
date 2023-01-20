@@ -5,5 +5,7 @@
   "privacyPolicy": "Politica de Confidențialitate",
   "softwareDevelopment": "Dezvoltare de software",
   "share": "Acțiune",
-  "dateFormat" : "{dateFormat}"
+  "dateFormat" : "{dateFormat}",
+  "initialCostEmptyErrorMessage" : "Необходимо заполнить первоначальную стоимость",
+  "lifeTimeEmptyErrorMessage" : "Необходимо заполнить срок эксплуатации"
 }
