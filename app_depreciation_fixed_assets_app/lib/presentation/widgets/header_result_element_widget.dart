@@ -12,11 +12,14 @@ class HeaderResultElementWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      LocaleKeys.dateFormat.tr(namedArgs: {
-        "dateFormat": DateFormatUtils().formatYear(date: headerResultEntity.dateTime)
-      }),
-      style: StylesManager.getRegularStyle(fontSize: FontSize.s16),
+    return Padding(
+      padding: const EdgeInsets.all(AppSize.s10),
+      child: Text(
+        LocaleKeys.dateFormat.tr(namedArgs: {
+          "dateFormat": DateFormatUtils().formatYear(date: headerResultEntity.dateTime)
+        }),
+        style: StylesManager.getBoldStyle(fontSize: FontSize.s18),
+      ),
     );
   }
 }
