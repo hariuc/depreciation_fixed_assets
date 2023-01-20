@@ -2,6 +2,8 @@ import 'dart:developer';
 import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
 import 'package:depreciation_fixed_assets_app/generated/locale_keys.loc.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/depreciation_result_cubit.dart';
+import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/initial_cost_validator_cubit.dart';
+import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/lifetime_validator_cubit.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/initial_cost_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/lifetime_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/result_list_widget.dart';
@@ -30,6 +32,7 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView>
   final _initCostController = TextEditingController();
   late AnimationController _animationController;
   late Animation<double> _animation;
+  final _costFieldFocusNode = FocusNode();
 
   @override
   void initState() {
@@ -55,12 +58,6 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView>
         );
       },
     );
-    // return Padding(
-    //   padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
-    //   child: Column(
-    //     children: _createColumnList(),
-    //   ),
-    // );
   }
 
   List<Widget> _createColumnList() {
@@ -118,13 +115,17 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView>
     log("[MainMeanDetailPageView]: _calculateButtonAction");
     if (_initCostController.text.trim().isEmpty) {
       ShowMessage.showSnackBar(context, LocaleKeys.initialCostEmptyErrorMessage.tr());
+      BlocProvider.of<InitialCostValidatorCubit>(context).changeValue(value: false);
       return;
     }
 
     if (_lifeTimeController.text.trim().isEmpty) {
+      BlocProvider.of<LifetimeValidatorCubit>(context).changeValue(value: false);
       ShowMessage.showSnackBar(context, LocaleKeys.lifeTimeEmptyErrorMessage.tr());
       return;
     }
+    BlocProvider.of<InitialCostValidatorCubit>(context).changeValue(value: true);
+    BlocProvider.of<LifetimeValidatorCubit>(context).changeValue(value: true);
     BlocProvider.of<DepreciationResultCubit>(context).changeValue(
         depreciationMethod: DepreciationMethod.straightforward,
         suma: double.parse(_initCostController.text),

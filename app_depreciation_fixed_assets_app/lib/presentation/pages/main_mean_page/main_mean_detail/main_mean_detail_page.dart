@@ -1,5 +1,7 @@
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/depreciation_method_cubit.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/depreciation_result_cubit.dart';
+import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/initial_cost_validator_cubit.dart';
+import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/lifetime_validator_cubit.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/year_rate_cubit.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/main_mean_detail_page_view.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +16,8 @@ class MainMeanDetailPage extends StatelessWidget {
       BlocProvider(create: (context) => DepreciationMethodCubit()),
       BlocProvider(create: (context) => YearRateCubit()),
       BlocProvider(create: (context) => DepreciationResultCubit()),
+      BlocProvider(create: (context) => InitialCostValidatorCubit()),
+      BlocProvider(create: (context) => LifetimeValidatorCubit()),
     ], child: const MainMeanDetailPageView());
   }
 }

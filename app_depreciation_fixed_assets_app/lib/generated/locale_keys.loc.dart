@@ -11,5 +11,8 @@ abstract class  LocaleKeys {
   static const dateFormat = 'dateFormat';
   static const initialCostEmptyErrorMessage = 'initialCostEmptyErrorMessage';
   static const lifeTimeEmptyErrorMessage = 'lifeTimeEmptyErrorMessage';
+  static const initialCostLabelError = 'initialCostLabelError';
+  static const initPriceLabel = 'initPriceLabel';
+  static const lifeTimeLabel = 'lifeTimeLabel';
 
 }

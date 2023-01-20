@@ -8,5 +8,8 @@
   "share": "Поделиться",
   "dateFormat" : "{dateFormat}",
   "initialCostEmptyErrorMessage" : "Необходимо заполнить первоначальную стоимость",
-  "lifeTimeEmptyErrorMessage" : "Необходимо заполнить срок эксплуатации"
+  "lifeTimeEmptyErrorMessage" : "Необходимо заполнить срок эксплуатации",
+  "initialCostLabelError" : "Необходимо заполнить поле",
+  "initPriceLabel" : "Первоначальная стоимость",
+  "lifeTimeLabel" : "Срок эксплуатации (лет)"
 }
