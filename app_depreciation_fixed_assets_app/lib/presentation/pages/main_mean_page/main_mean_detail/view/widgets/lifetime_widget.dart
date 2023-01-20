@@ -15,7 +15,7 @@ class LifeTimeWidget extends StatelessWidget {
         style: StylesManager.getMediumStyle(
           fontSize: FontSize.s16,
         ),
-        inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r"[0-9.]"))],
+        inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r"[0-9]"))],
         decoration: InputDecoration(
           prefixIcon: const Icon(Icons.abc),
           border: const OutlineInputBorder(),
