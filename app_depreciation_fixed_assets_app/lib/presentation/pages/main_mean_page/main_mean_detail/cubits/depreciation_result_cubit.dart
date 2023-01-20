@@ -10,7 +10,6 @@ class DepreciationResultCubit extends Cubit<List<ListItem>> {
   void changeValue({required DepreciationMethod depreciationMethod}) {
     log("[DepreciationResultCubit]: changeValue");
     var resultList = <ListItem>[];
-    //Прямолинейный
     if (depreciationMethod == DepreciationMethod.straightforward) {
       resultList = CalculateDepreciationFixedAssets().straightforwardCalculation();
     } else if (depreciationMethod == DepreciationMethod.cumulative) {

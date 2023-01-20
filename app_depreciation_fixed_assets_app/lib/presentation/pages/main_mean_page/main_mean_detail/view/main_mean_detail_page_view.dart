@@ -52,13 +52,13 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
       // ..add(NameMainMeanWidget(
       //   controller: _nameController,
       // ))
-      ..add(const SizedBox(
-        height: AppSize.s12,
-      ))
-      ..add(const DepreciationMethodWidget())
-      ..add(const SizedBox(
-        height: AppSize.s12,
-      ))
+      // ..add(const SizedBox(
+      //   height: AppSize.s12,
+      // ))
+      // ..add(const DepreciationMethodWidget())
+      // ..add(const SizedBox(
+      //   height: AppSize.s12,
+      // ))
       ..add(InitialCostWidget(
         controller: _initCostController,
       ))
@@ -71,13 +71,6 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
       ..add(const SizedBox(
         height: AppSize.s12,
       ))
-      // ..add(AnnualRateWidget(
-      //   controller: _yearRateController,
-      // ))
-      // ..add(const YearRateTextWidget())
-      // ..add(const SizedBox(
-      //   height: AppSize.s12,
-      // ))
       ..add(const ResultListWidget())
       ..add(const SizedBox(
         height: AppSize.s12,

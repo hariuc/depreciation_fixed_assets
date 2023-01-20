@@ -55,6 +55,7 @@ class CalculateDepreciationFixedAssets {
   }
 
   List<ListItem> cumulativeCalculation() {
+
     final newList = <ListItem>[];
     return newList;
   }
