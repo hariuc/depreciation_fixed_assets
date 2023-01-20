@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
 import 'package:common/calculate_depreciation_fixed_assets.dart';
+import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/depreciation_method_cubit.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/depreciation_result_cubit.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/annual_rate_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/depreciation_method_widget.dart';
@@ -11,6 +12,7 @@ import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/result_list_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/year_rate_text_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/widgets/button_widget.dart';
+import 'package:domain/enums/depreciation_method.dart';
 import 'package:flutter/material.dart';
 import 'package:domain/enums/type_operation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -72,11 +74,11 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
       // ..add(AnnualRateWidget(
       //   controller: _yearRateController,
       // ))
-      ..add(const YearRateTextWidget())
-      ..add(const SizedBox(
-        height: AppSize.s12,
-      ))
-      ..add(ResultListWidget())
+      // ..add(const YearRateTextWidget())
+      // ..add(const SizedBox(
+      //   height: AppSize.s12,
+      // ))
+      ..add(const ResultListWidget())
       ..add(const SizedBox(
         height: AppSize.s12,
       ))
@@ -85,7 +87,17 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
         child: ButtonWidget(
           callback: () {
             log("[MainMeanDetailPageView]: straightforwardCalculation");
-            BlocProvider.of<DepreciationResultCubit>(context).changeValue();
+            final boolList = BlocProvider.of<DepreciationMethodCubit>(context).state;
+            var depreciationMethod = DepreciationMethod.straightforward;
+            if (boolList[1]) {
+              depreciationMethod = DepreciationMethod.production;
+            } else if (boolList[2]) {
+              depreciationMethod = DepreciationMethod.cumulative;
+            } else if (boolList[3]) {
+              depreciationMethod = DepreciationMethod.production;
+            }
+            BlocProvider.of<DepreciationResultCubit>(context)
+                .changeValue(depreciationMethod: depreciationMethod);
           },
           child: Text(
             "Расчет",

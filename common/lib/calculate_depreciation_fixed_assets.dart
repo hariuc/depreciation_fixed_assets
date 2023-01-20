@@ -54,6 +54,21 @@ class CalculateDepreciationFixedAssets {
     return newList;
   }
 
+  List<ListItem> cumulativeCalculation() {
+    final newList = <ListItem>[];
+    return newList;
+  }
+
+  List<ListItem> productionCalculation() {
+    final newList = <ListItem>[];
+    return newList;
+  }
+
+  List<ListItem> decreasingBalanceCalculation() {
+    final newList = <ListItem>[];
+    return newList;
+  }
+
   DateTime _getInitialDate({required DateTime initDate}) {
     var day1 = initDate;
     while (true) {
