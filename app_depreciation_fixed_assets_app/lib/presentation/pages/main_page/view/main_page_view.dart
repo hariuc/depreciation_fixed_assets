@@ -15,7 +15,7 @@ class MainPageView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "App",
+          "Износ основных средств",
           style: StylesManager.getLightStyle(fontSize: FontSize.s20, color: ColorManager.white),
         ),
       ),
@@ -29,7 +29,7 @@ class MainPageView extends StatelessWidget {
     );
   }
 
-  // void _addNewMainMeanAction({required BuildContext context}) {
+// void _addNewMainMeanAction({required BuildContext context}) {
 //   log("[MainPageView]: _addNewMainMeanAction");
 //   Navigator.pushNamed(context, AppRouters.mainMeanDetailPage);
 // }

@@ -2,15 +2,18 @@ import 'dart:developer';
 
 import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
 import 'package:common/calculate_depreciation_fixed_assets.dart';
+import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/depreciation_result_cubit.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/annual_rate_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/depreciation_method_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/initial_cost_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/lifetime_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/name_main_mean_widget.dart';
+import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/result_list_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/year_rate_text_widget.dart';
 import 'package:depreciation_fixed_assets_app/presentation/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:domain/enums/type_operation.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainMeanDetailPageView extends StatefulWidget {
   final TypeOperation typeOperation;
@@ -80,15 +83,18 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
         child: ButtonWidget(
           callback: () {
             log("[MainMeanDetailPageView]: straightforwardCalculation");
-            final a = CalculateDepreciationFixedAssets().straightforwardCalculation();
-            print(a.toString());
+            BlocProvider.of<DepreciationResultCubit>(context).changeValue();
           },
           child: Text(
             "Расчет",
             style: StylesManager.getBoldStyle(fontSize: FontSize.s16, color: ColorManager.white),
           ),
         ),
-      ));
+      ))
+      ..add(const SizedBox(
+        height: AppSize.s12,
+      ))
+      ..add(const ResultListWidget());
 
     return list;
   }
