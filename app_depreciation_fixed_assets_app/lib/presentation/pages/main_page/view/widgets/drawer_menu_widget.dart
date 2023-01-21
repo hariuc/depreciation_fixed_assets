@@ -67,19 +67,6 @@ class DrawerMenuWidget extends StatelessWidget {
       ..add(const SizedBox(
         height: AppSize.s8,
       ))
-      // ..add(ElementMenuDrawerWidget(
-      //   title: LocaleKeys.share.tr(),
-      //   icon: const Icon(
-      //     Icons.share,
-      //   ),
-      //   callback: () async {
-      //     log("[DrawerMenuWidget]: share");
-      //     // Share.share(pathOnGoogePlay);
-      //   },
-      // ))
-      // ..add(const SizedBox(
-      //   height: AppSize.s8,
-      // ))
       ..add(ElementMenuDrawerWidget(
         title: LocaleKeys.privacyPolicy.tr(),
         icon: const Icon(

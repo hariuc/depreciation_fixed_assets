@@ -9,8 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ResultListWidget extends StatelessWidget {
-  //final _listKey = GlobalKey<AnimatedListState>();
-
   const ResultListWidget({Key? key}) : super(key: key);
 
   @override
