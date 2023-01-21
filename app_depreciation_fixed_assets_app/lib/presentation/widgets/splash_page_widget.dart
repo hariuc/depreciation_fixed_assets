@@ -17,8 +17,6 @@ class _SplashPageWidgetState extends State<SplashPageWidget> {
     super.initState();
     Timer(const Duration(milliseconds: DurationConstant.d3000), () {
       Navigator.pushReplacementNamed(context, AppRouters.mainPageRoute);
-      //Navigator.pushAndRemoveUntil(context, newRoute, (route) => false)
-      //Navigator.of(context).pushReplacementNamed(widget.mainScreenRoute);
     });
   }
 

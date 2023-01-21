@@ -31,11 +31,6 @@ class TotalResultElementWidget extends StatelessWidget {
       children: [
         Text(
           "Итого:",
-          //DateFormatUtils().formatDateMonthYear(date: resultCalculateEntity.dateTime),
-          // LocaleKeys.dateFormat.tr(namedArgs: {
-          //   "dateFormat":
-          //   DateFormatUtils().formatDateMonthYear(date: resultCalculateEntity.dateTime)
-          //}),
           style: StylesManager.getRegularStyle(fontSize: FontSize.s16),
         )
       ],
