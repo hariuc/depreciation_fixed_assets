@@ -12,5 +12,6 @@
   "initPriceLabel": "Costul inițial",
   "lifeTimeLabel": "Durata de viață (ani)",
   "lifeTimeLabelError": "Este necesar să completați câmpul. Durata de viață (ani)",
-  "calculateOperation": "Calculează"
+  "calculateOperation": "Calculează",
+  "totalSuma": "Итого"
 }

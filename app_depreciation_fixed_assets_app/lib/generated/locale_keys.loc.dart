@@ -16,5 +16,6 @@ abstract class  LocaleKeys {
   static const lifeTimeLabel = 'lifeTimeLabel';
   static const lifeTimeLabelError = 'lifeTimeLabelError';
   static const calculateOperation = 'calculateOperation';
+  static const totalSuma = 'totalSuma';
 
 }

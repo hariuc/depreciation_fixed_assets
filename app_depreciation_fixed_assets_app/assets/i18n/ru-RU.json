@@ -13,5 +13,6 @@
   "initPriceLabel" : "Первоначальная стоимость",
   "lifeTimeLabel" : "Срок эксплуатации (лет)",
   "lifeTimeLabelError" : "Необходимо заполнить поле. Срок эксплуатации (лет)",
-  "calculateOperation" : "Вычислить"
+  "calculateOperation" : "Вычислить",
+  "totalSuma": "Итого"
 }
