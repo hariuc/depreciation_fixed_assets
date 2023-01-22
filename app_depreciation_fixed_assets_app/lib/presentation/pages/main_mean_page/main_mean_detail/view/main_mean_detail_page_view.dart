@@ -30,32 +30,22 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView>
   final _nameController = TextEditingController();
   final _lifeTimeController = TextEditingController();
   final _initCostController = TextEditingController();
-  late AnimationController _animationController;
-  late Animation<double> _animation;
 
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: DurationConstant.d1000));
-    _animation = Tween<double>(begin: 0.0, end: 1.0).animate(_animationController)
-      ..addListener(() {
-        setState(() {});
-      });
+    // WidgetsBinding.instance.addPostFrameCallback((_) {
+    //
+    // });
   }
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _animationController,
-      builder: (context, child) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
-          child: Column(
-            children: _createColumnList(),
-          ),
-        );
-      },
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
+      child: Column(
+        children: _createColumnList(),
+      ),
     );
   }
 
@@ -75,7 +65,8 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView>
           const SizedBox(
             width: AppSize.s10,
           ),
-          Expanded(child: LifeTimeWidget(
+          Expanded(
+              child: LifeTimeWidget(
             controller: _lifeTimeController,
           )),
         ],
@@ -109,7 +100,6 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView>
   @override
   void dispose() {
     super.dispose();
-    _animationController.dispose();
     _nameController.dispose();
     _lifeTimeController.dispose();
     _initCostController.dispose();
