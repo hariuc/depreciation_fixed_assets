@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
 import 'package:depreciation_fixed_assets_app/generated/locale_keys.loc.dart';
+import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/animation_opacity_cubit.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/depreciation_result_cubit.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/initial_cost_validator_cubit.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/lifetime_validator_cubit.dart';
@@ -13,6 +14,7 @@ import 'package:domain/enums/depreciation_method.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:domain/enums/type_operation.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainMeanDetailPageView extends StatefulWidget {
@@ -25,8 +27,7 @@ class MainMeanDetailPageView extends StatefulWidget {
   State<MainMeanDetailPageView> createState() => _MainMeanDetailPageViewState();
 }
 
-class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView>
-    with SingleTickerProviderStateMixin {
+class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
   final _nameController = TextEditingController();
   final _lifeTimeController = TextEditingController();
   final _initCostController = TextEditingController();
@@ -34,18 +35,27 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView>
   @override
   void initState() {
     super.initState();
-    // WidgetsBinding.instance.addPostFrameCallback((_) {
-    //
-    // });
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      BlocProvider.of<AnimationOpacityCubit>(context).changeValue(value: true);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
-      child: Column(
-        children: _createColumnList(),
-      ),
+    return BlocBuilder<AnimationOpacityCubit, bool>(
+      builder: (context, stateValue) {
+        return AnimatedOpacity(
+          duration: animationDuration,
+          opacity: stateValue ? 1 : 0,
+          curve: Curves.bounceOut,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
+            child: Column(
+              children: _createColumnList(),
+            ),
+          ),
+        );
+      },
     );
   }
 
@@ -95,6 +105,12 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView>
       ));
 
     return list;
+  }
+
+  @override
+  void deactivate() {
+    super.deactivate();
+    BlocProvider.of<AnimationOpacityCubit>(context).changeValue(value: false);
   }
 
   @override

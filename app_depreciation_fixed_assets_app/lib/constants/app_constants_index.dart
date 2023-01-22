@@ -13,14 +13,15 @@ part 'resources/assets_manager.dart';
 
 part 'resources/values_manager.dart';
 
-const String localizationPath = "assets/i18n";
-const String privacyPolicyPath =
+const animationDuration = Duration(milliseconds: 1500);
+const localizationPath = "assets/i18n";
+const privacyPolicyPath =
     "https://github.com/hariuc/apps_info/blob/master/depreciation_fixed_assets/privacy_policy.md";
 // const String whatIsNewPath =
 //     "https://github.com/hariuc/apps_info/blob/master/goods_info_app/whats_is_new.md";
-const String helpPath =
+const helpPath =
     "https://github.com/hariuc/apps_info/blob/master/depreciation_fixed_assets/help.md";
-const String softwareDevelopmentPath =
+const softwareDevelopmentPath =
     "https://github.com/hariuc/apps_info/blob/master/software_development.md";
 //
 // const String pathOnGoogePlay =
