@@ -13,7 +13,7 @@ part 'resources/assets_manager.dart';
 
 part 'resources/values_manager.dart';
 
-const animationDuration = Duration(milliseconds: 1500);
+const animationDuration = Duration(milliseconds: 500);
 const localizationPath = "assets/i18n";
 const privacyPolicyPath =
     "https://github.com/hariuc/apps_info/blob/master/depreciation_fixed_assets/privacy_policy.md";

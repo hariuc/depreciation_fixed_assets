@@ -42,20 +42,29 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AnimationOpacityCubit, bool>(
-      builder: (context, stateValue) {
-        return AnimatedOpacity(
-          duration: animationDuration,
-          opacity: stateValue ? 1 : 0,
-          curve: Curves.bounceOut,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
-            child: Column(
-              children: _createColumnList(),
-            ),
-          ),
-        );
-      },
+    // return BlocBuilder<AnimationOpacityCubit, bool>(
+    //   builder: (context, stateValue) {
+    //     return TweenAnimationBuilder(
+    //         tween: Tween(begin: stateValue ? 0.0 : 1.0, end: stateValue ? 1.0 : 0.0),
+    //         duration: animationDuration,
+    //         builder: (BuildContext context, double value, _) {
+    //           return Opacity(
+    //             opacity: value,
+    //             child: Padding(
+    //               padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
+    //               child: Column(
+    //                 children: _createColumnList(),
+    //               ),
+    //             ),
+    //           );
+    //         });
+    //   },
+    // );
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
+      child: Column(
+        children: _createColumnList(),
+      ),
     );
   }
 
@@ -73,7 +82,7 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
             controller: _initCostController,
           )),
           const SizedBox(
-            width: AppSize.s10,
+            width: AppSize.s4,
           ),
           Expanded(
               child: LifeTimeWidget(
