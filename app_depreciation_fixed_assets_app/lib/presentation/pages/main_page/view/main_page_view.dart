@@ -14,9 +14,10 @@ class MainPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: AppSize.s3,
         title: Text(
           LocaleKeys.appName.tr(),
-          style: StylesManager.getLightStyle(fontSize: FontSize.s20, color: ColorManager.black),
+          style: StylesManager.getBoldStyle(fontSize: FontSize.s20, color: ColorManager.black),
         ),
       ),
       body: const MainMeanDetailPage(),
