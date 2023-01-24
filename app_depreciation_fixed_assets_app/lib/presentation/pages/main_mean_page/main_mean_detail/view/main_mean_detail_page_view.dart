@@ -42,24 +42,6 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
 
   @override
   Widget build(BuildContext context) {
-    // return BlocBuilder<AnimationOpacityCubit, bool>(
-    //   builder: (context, stateValue) {
-    //     return TweenAnimationBuilder(
-    //         tween: Tween(begin: stateValue ? 0.0 : 1.0, end: stateValue ? 1.0 : 0.0),
-    //         duration: animationDuration,
-    //         builder: (BuildContext context, double value, _) {
-    //           return Opacity(
-    //             opacity: value,
-    //             child: Padding(
-    //               padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
-    //               child: Column(
-    //                 children: _createColumnList(),
-    //               ),
-    //             ),
-    //           );
-    //         });
-    //   },
-    // );
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
       child: Column(
@@ -93,7 +75,11 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
       ..add(const SizedBox(
         height: AppSize.s12,
       ))
-      ..add(const ResultListWidget())
+      ..add(ResultListWidget(
+        asyncCallback: () async {
+          _calculateButtonAction(context: context);
+        },
+      ))
       ..add(const SizedBox(
         height: AppSize.s12,
       ))
@@ -130,7 +116,7 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
     _initCostController.dispose();
   }
 
-  void _calculateButtonAction({required BuildContext context}) {
+  Future<void> _calculateButtonAction({required BuildContext context}) async {
     log("[MainMeanDetailPageView]: _calculateButtonAction");
     if (_initCostController.text.trim().isEmpty) {
       ShowMessage.showSnackBar(context, LocaleKeys.initialCostEmptyErrorMessage.tr());

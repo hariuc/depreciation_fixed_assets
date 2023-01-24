@@ -14,5 +14,6 @@
   "lifeTimeLabel" : "Срок эксплуатации (лет)",
   "lifeTimeLabelError" : "Необходимо заполнить поле. Срок эксплуатации (лет)",
   "calculateOperation" : "Вычислить",
-  "totalSuma": "Итого"
+  "totalSuma": "Итого",
+  "noDataTitle" : "Нет данных"
 }

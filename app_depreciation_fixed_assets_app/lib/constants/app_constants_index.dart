@@ -23,6 +23,6 @@ const helpPath =
     "https://github.com/hariuc/apps_info/blob/master/depreciation_fixed_assets/help.md";
 const softwareDevelopmentPath =
     "https://github.com/hariuc/apps_info/blob/master/software_development.md";
-//
-// const String pathOnGoogePlay =
-//     "https://play.google.com/store/apps/details?id=com.vipasoft.goodsinformation";
+
+const String pathOnGoogePlay =
+    "https://play.google.com/store/apps/details?id=scssoft.site.depreciation.fixed.assets&pli=1";
