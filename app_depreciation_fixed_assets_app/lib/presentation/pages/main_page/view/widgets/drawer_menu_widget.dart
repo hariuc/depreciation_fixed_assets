@@ -25,8 +25,11 @@ class DrawerMenuWidget extends StatelessWidget {
   }
 
   Widget _createDrawerHeader() {
-    return const DrawerHeader(
-      child: LogoWidget(),
+    return const Padding(
+      padding: const EdgeInsets.all(AppPadding.p16),
+      child: SizedBox(
+        child: LogoWidget(),
+      ),
     );
   }
 
