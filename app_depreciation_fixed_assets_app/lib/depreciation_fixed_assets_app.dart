@@ -11,6 +11,10 @@ class DepreciationFixedAssetsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        theme: ThemeData(
+          brightness: Brightness.light,
+          useMaterial3: true,
+        ),
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
         locale: context.locale,

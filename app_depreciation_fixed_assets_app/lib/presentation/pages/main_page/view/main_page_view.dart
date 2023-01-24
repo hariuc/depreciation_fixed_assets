@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
 import 'package:depreciation_fixed_assets_app/generated/locale_keys.loc.dart';
 import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/main_mean_detail_page.dart';
@@ -18,7 +16,7 @@ class MainPageView extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           LocaleKeys.appName.tr(),
-          style: StylesManager.getLightStyle(fontSize: FontSize.s20, color: ColorManager.white),
+          style: StylesManager.getLightStyle(fontSize: FontSize.s20, color: ColorManager.black),
         ),
       ),
       body: const MainMeanDetailPage(),
