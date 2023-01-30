@@ -16,14 +16,14 @@ class InitialCostWidget extends StatelessWidget {
     return BlocBuilder<InitialCostValidatorCubit, bool>(builder: (_, stateValue) {
       return TextFormField(
           controller: controller,
-          keyboardType: TextInputType.number,
+          keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: false),
           style: StylesManager.getMediumStyle(
             fontSize: FontSize.s16,
           ),
           onChanged: (String value) {
             BlocProvider.of<InitialCostValidatorCubit>(context).changeValue(value: true);
           },
-          inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r"[0-9.]"))],
+          inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,2}'))],
           decoration: InputDecoration(
             prefixIcon: const Icon(Icons.paid),
             border: const OutlineInputBorder(),

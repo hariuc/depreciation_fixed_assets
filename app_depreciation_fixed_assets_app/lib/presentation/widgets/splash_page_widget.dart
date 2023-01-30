@@ -34,7 +34,7 @@ class _SplashPageWidgetState extends State<SplashPageWidget> {
       body: AnimatedOpacity(
         duration: const Duration(milliseconds: DurationConstant.d3000),
         opacity: _animation ? 1.0 : 0.0,
-        curve: Curves.easeInCubic,
+        curve: Curves.easeIn,
         child: Center(
           child: ImageAssets.scsLogo(width: AppSize.s150, height: AppSize.s150),
         ),

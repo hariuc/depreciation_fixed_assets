@@ -48,16 +48,13 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
     return AnimatedOpacity(
       duration: const Duration(milliseconds: DurationConstant.d2000),
       opacity: _animation ? 1.0 : 0.0,
-      curve: Curves.easeInCubic,
+      curve: Curves.easeIn,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
         child: Column(
           children: _createColumnList(),
         ),
       ),
-      onEnd: () {
-        print("11111111111111111");
-      },
     );
   }
 
