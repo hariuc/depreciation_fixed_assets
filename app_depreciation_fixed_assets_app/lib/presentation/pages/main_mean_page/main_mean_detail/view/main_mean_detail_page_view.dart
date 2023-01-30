@@ -31,22 +31,33 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
   final _nameController = TextEditingController();
   final _lifeTimeController = TextEditingController();
   final _initCostController = TextEditingController();
+  var _animation = false;
 
   @override
   void initState() {
     super.initState();
     SchedulerBinding.instance.addPostFrameCallback((_) {
       BlocProvider.of<AnimationOpacityCubit>(context).changeValue(value: true);
+      _animation = true;
+      setState(() {});
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
-      child: Column(
-        children: _createColumnList(),
+    return AnimatedOpacity(
+      duration: const Duration(milliseconds: DurationConstant.d2000),
+      opacity: _animation ? 1.0 : 0.0,
+      curve: Curves.easeInCubic,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
+        child: Column(
+          children: _createColumnList(),
+        ),
       ),
+      onEnd: () {
+        print("11111111111111111");
+      },
     );
   }
 
