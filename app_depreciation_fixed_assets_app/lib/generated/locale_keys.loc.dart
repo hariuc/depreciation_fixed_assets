@@ -18,5 +18,7 @@ abstract class  LocaleKeys {
   static const calculateOperation = 'calculateOperation';
   static const totalSuma = 'totalSuma';
   static const noDataTitle = 'noDataTitle';
+  static const annualRate = 'annualRate';
+  static const nameTitle = 'nameTitle';
 
 }

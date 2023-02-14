@@ -15,8 +15,7 @@ dependencies:
     path: ../common
   get_it: ^7.2.0
   equatable: ^2.0.5
-  json_annotation: ^4.7.0
-  objectbox: ^1.7.2
+  json_annotation: ^4.6.0
 
 dev_dependencies:
   lints: ^2.0.1
