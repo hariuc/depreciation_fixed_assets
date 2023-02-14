@@ -51,7 +51,7 @@ class DrawerMenuWidget extends StatelessWidget {
         title: LocaleKeys.softwareDevelopment.tr(),
         icon: ImageAssets.scsLogo(),
         callback: () async {
-          log("[DrawerMenuWidget]: softwareDevelopmentPath");
+          log("[${toString()}]: softwareDevelopmentPath");
           await launchUrl(Uri.parse(softwareDevelopmentPath));
         },
       ))
@@ -64,7 +64,7 @@ class DrawerMenuWidget extends StatelessWidget {
           Icons.help_center,
         ),
         callback: () async {
-          log("[DrawerMenuWidget]: help");
+          log("[${toString()}]: help");
           await launchUrl(Uri.parse(helpPath));
         },
       ))
@@ -77,7 +77,7 @@ class DrawerMenuWidget extends StatelessWidget {
           Icons.share,
         ),
         callback: () async {
-          log("[DrawerMenuWidget]: share");
+          log("[${toString()}]: share");
           Share.share(pathOnGoogePlay);
         },
       ))
@@ -90,7 +90,7 @@ class DrawerMenuWidget extends StatelessWidget {
           Icons.privacy_tip,
         ),
         callback: () async {
-          log("[DrawerMenuWidget]: privacyPolicy");
+          log("[${toString()}]: privacyPolicy");
           await launchUrl(Uri.parse(privacyPolicyPath));
         },
       ));

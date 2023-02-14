@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:depreciation_fixed_assets_app/generated/locale_keys.loc.dart';
 import 'package:domain/core/list_item.dart';

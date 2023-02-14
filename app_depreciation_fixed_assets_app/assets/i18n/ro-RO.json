@@ -14,5 +14,7 @@
   "lifeTimeLabelError": "Este necesar să completați câmpul. Durata de viață (ani)",
   "calculateOperation": "Calculează",
   "totalSuma": "Total",
-  "noDataTitle" : "Nu există date"
+  "noDataTitle" : "Nu există date",
+  "annualRate" : "Rata anuala",
+  "nameTitle" : "Nume"
 }

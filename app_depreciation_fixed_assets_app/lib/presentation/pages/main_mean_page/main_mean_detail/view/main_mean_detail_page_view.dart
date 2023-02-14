@@ -125,7 +125,7 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
   }
 
   Future<void> _calculateButtonAction({required BuildContext context}) async {
-    log("[MainMeanDetailPageView]: _calculateButtonAction");
+    log("[${toString()}]: _calculateButtonAction");
     if (_initCostController.text.trim().isEmpty) {
       ShowMessage.showSnackBar(context, LocaleKeys.initialCostEmptyErrorMessage.tr());
       BlocProvider.of<InitialCostValidatorCubit>(context).changeValue(value: false);

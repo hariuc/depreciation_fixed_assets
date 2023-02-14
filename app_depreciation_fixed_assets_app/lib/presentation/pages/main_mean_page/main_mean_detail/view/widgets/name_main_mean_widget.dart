@@ -1,4 +1,6 @@
 import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
+import 'package:depreciation_fixed_assets_app/generated/locale_keys.loc.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class NameMainMeanWidget extends StatelessWidget {
@@ -18,7 +20,7 @@ class NameMainMeanWidget extends StatelessWidget {
         decoration: InputDecoration(
           prefixIcon: const Icon(Icons.abc),
           border: const OutlineInputBorder(),
-          labelText: "Наименование",
+          labelText: "${LocaleKeys.nameTitle.tr()}",
           labelStyle: StylesManager.getLightStyle(
             fontSize: FontSize.s16,
           ),

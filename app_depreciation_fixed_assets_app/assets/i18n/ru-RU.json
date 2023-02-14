@@ -15,5 +15,7 @@
   "lifeTimeLabelError" : "Необходимо заполнить поле. Срок эксплуатации (лет)",
   "calculateOperation" : "Вычислить",
   "totalSuma": "Итого",
-  "noDataTitle" : "Нет данных"
+  "noDataTitle" : "Нет данных",
+  "annualRate" : "Годовая норма",
+  "nameTitle" : "Наименование"
 }

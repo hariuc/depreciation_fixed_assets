@@ -25,7 +25,7 @@ class LifeTimeWidget extends StatelessWidget {
           ),
           inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r"[0-9]"))],
           onChanged: (String value) {
-            log("[LifeTimeWidget]: onChanged $value");
+            log("[${toString()}]: onChanged $value");
             BlocProvider.of<LifetimeValidatorCubit>(context).changeValue(value: true);
             BlocProvider.of<YearRateCubit>(context)
                 .changeValue(yearRate: controller.text.isEmpty ? 0 : int.parse(controller.text));
