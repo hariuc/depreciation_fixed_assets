@@ -11,8 +11,6 @@ dependencies:
     sdk: flutter
   domain:
     path: ../domain
-  data:
-    path: ../data
   common:
     path: ../common
 

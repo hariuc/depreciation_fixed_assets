@@ -12,17 +12,10 @@ class DepreciationResultCubit extends Cubit<List<ListItem>> {
       required double suma,
       required int yearDepreciation}) {
     log("[DepreciationResultCubit]: changeValue");
-    //var resultList = <ListItem>[];
-    // if (depreciationMethod == DepreciationMethod.straightforward) {
+
     final resultList = CalculateDepreciationFixedAssets()
-        .straightforwardCalculation(suma: suma, yearDepreciation: yearDepreciation);
-    // } else if (depreciationMethod == DepreciationMethod.cumulative) {
-    //   resultList = CalculateDepreciationFixedAssets().cumulativeCalculation();
-    // } else if (depreciationMethod == DepreciationMethod.production) {
-    //   resultList = CalculateDepreciationFixedAssets().productionCalculation();
-    // } else if (depreciationMethod == DepreciationMethod.decreasingBalance) {
-    //   resultList = CalculateDepreciationFixedAssets().decreasingBalanceCalculation();
-    // }
+        .straightforwardCalculation(
+            suma: suma, yearDepreciation: yearDepreciation);
 
     emit(resultList);
   }
