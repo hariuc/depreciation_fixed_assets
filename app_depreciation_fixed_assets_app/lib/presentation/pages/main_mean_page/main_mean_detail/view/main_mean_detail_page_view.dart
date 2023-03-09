@@ -13,14 +13,14 @@ import 'package:depreciation_fixed_assets_app/utils/show_message.dart';
 import 'package:domain/enums/depreciation_method.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:domain/enums/type_operation.dart';
+
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainMeanDetailPageView extends StatefulWidget {
-  final TypeOperation typeOperation;
 
-  const MainMeanDetailPageView({Key? key, this.typeOperation = TypeOperation.newElement})
+
+  const MainMeanDetailPageView({Key? key})
       : super(key: key);
 
   @override
@@ -61,51 +61,44 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
   List<Widget> _createColumnList() {
     final list = <Widget>[];
 
-    list
-      ..add(const SizedBox(
-        height: AppSize.s12,
-      ))
-      ..add(Row(
-        children: [
-          Expanded(
-              child: InitialCostWidget(
-            controller: _initCostController,
-          )),
-          const SizedBox(
-            width: AppSize.s4,
-          ),
-          Expanded(
-              child: LifeTimeWidget(
-            controller: _lifeTimeController,
-          )),
-        ],
-      ))
-      ..add(const SizedBox(
-        height: AppSize.s12,
-      ))
-      ..add(ResultListWidget(
-        asyncCallback: () async {
+    list..add(const SizedBox(
+      height: AppSize.s12,
+    ))..add(Row(
+      children: [
+        Expanded(
+            child: InitialCostWidget(
+              controller: _initCostController,
+            )),
+        const SizedBox(
+          width: AppSize.s4,
+        ),
+        Expanded(
+            child: LifeTimeWidget(
+              controller: _lifeTimeController,
+            )),
+      ],
+    ))..add(const SizedBox(
+      height: AppSize.s12,
+    ))..add(ResultListWidget(
+      asyncCallback: () async {
+        _calculateButtonAction(context: context);
+      },
+    ))..add(const SizedBox(
+      height: AppSize.s12,
+    ))..add(SizedBox(
+      width: double.infinity,
+      child: ButtonWidget(
+        callback: () {
           _calculateButtonAction(context: context);
         },
-      ))
-      ..add(const SizedBox(
-        height: AppSize.s12,
-      ))
-      ..add(SizedBox(
-        width: double.infinity,
-        child: ButtonWidget(
-          callback: () {
-            _calculateButtonAction(context: context);
-          },
-          child: Text(
-            LocaleKeys.calculateOperation.tr(),
-            style: StylesManager.getBoldStyle(fontSize: FontSize.s16, color: ColorManager.white),
-          ),
+        child: Text(
+          LocaleKeys.calculateOperation.tr(),
+          style: StylesManager.getBoldStyle(fontSize: FontSize.s16, color: ColorManager.white),
         ),
-      ))
-      ..add(const SizedBox(
-        height: AppSize.s12,
-      ));
+      ),
+    ))..add(const SizedBox(
+      height: AppSize.s12,
+    ));
 
     return list;
   }
@@ -126,16 +119,22 @@ class _MainMeanDetailPageViewState extends State<MainMeanDetailPageView> {
 
   Future<void> _calculateButtonAction({required BuildContext context}) async {
     log("[${toString()}]: _calculateButtonAction");
-    if (_initCostController.text.trim().isEmpty) {
+    if (_initCostController.text
+        .trim()
+        .isEmpty) {
       ShowMessage.showSnackBar(context, LocaleKeys.initialCostEmptyErrorMessage.tr());
       BlocProvider.of<InitialCostValidatorCubit>(context).changeValue(value: false);
-      if (_lifeTimeController.text.trim().isEmpty) {
+      if (_lifeTimeController.text
+          .trim()
+          .isEmpty) {
         BlocProvider.of<LifetimeValidatorCubit>(context).changeValue(value: false);
       }
       return;
     }
 
-    if (_lifeTimeController.text.trim().isEmpty) {
+    if (_lifeTimeController.text
+        .trim()
+        .isEmpty) {
       BlocProvider.of<LifetimeValidatorCubit>(context).changeValue(value: false);
       ShowMessage.showSnackBar(context, LocaleKeys.lifeTimeEmptyErrorMessage.tr());
       return;
