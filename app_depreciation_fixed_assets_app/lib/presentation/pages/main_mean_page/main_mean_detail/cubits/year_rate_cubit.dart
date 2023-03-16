@@ -8,6 +8,6 @@ class YearRateCubit extends Cubit<double> {
 
   void changeValue({required int yearRate}) {
     log("[YearRateCubit]: changeValue $yearRate");
-    emit(YearRateCalculate().rateCalculate(lifeTime: yearRate));
+    emit(YearRateCalculate(lifeTime: yearRate).rateCalculate());
   }
 }
