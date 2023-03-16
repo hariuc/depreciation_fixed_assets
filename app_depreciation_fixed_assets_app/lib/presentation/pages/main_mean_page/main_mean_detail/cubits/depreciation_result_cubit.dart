@@ -13,9 +13,9 @@ class DepreciationResultCubit extends Cubit<List<ListItem>> {
       required int yearDepreciation}) {
     log("[DepreciationResultCubit]: changeValue");
 
-    final resultList = CalculateDepreciationFixedAssets()
-        .straightforwardCalculation(
-            suma: suma, yearDepreciation: yearDepreciation);
+    final resultList =
+        CalculateDepreciationFixedAssets(suma: suma, yearDepreciation: yearDepreciation)
+            .straightforwardCalculation();
 
     emit(resultList);
   }

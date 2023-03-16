@@ -5,7 +5,13 @@ import 'package:domain/modules/modules/main_mean/models/main_mean_index.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class CalculateDepreciationFixedAssets {
-  List<ListItem> straightforwardCalculation({required double suma, required int yearDepreciation}) {
+  final double suma;
+  final int yearDepreciation;
+
+
+  CalculateDepreciationFixedAssets({required this.suma,required this.yearDepreciation});
+
+  List<ListItem> straightforwardCalculation() {
     final list = <ResultCalculateEntity>[];
 
     final dateNow = DateTime.now();
