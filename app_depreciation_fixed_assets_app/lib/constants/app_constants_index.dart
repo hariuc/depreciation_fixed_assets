@@ -17,8 +17,6 @@ const animationDuration = Duration(milliseconds: 500);
 const localizationPath = "assets/i18n";
 const privacyPolicyPath =
     "https://github.com/hariuc/apps_info/blob/master/depreciation_fixed_assets/privacy_policy.md";
-// const String whatIsNewPath =
-//     "https://github.com/hariuc/apps_info/blob/master/goods_info_app/whats_is_new.md";
 const helpPath =
     "https://github.com/hariuc/apps_info/blob/master/depreciation_fixed_assets/help.md";
 const softwareDevelopmentPath =
