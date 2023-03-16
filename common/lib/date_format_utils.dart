@@ -1,15 +1,19 @@
 import 'package:easy_localization/easy_localization.dart';
 
 class DateFormatUtils {
-  String formatDate({required DateTime date}) {
+  final DateTime date;
+
+  DateFormatUtils({required this.date});
+
+  String formatDate() {
     return DateFormat("dd.MM.yyyy").format(date).toString();
   }
 
-  String formatDateMonthYear({required DateTime date}) {
+  String formatDateMonthYear() {
     return DateFormat("MMM yyyy").format(date).toString();
   }
 
-  String formatYear({required DateTime date}) {
+  String formatYear() {
     return DateFormat("yyyy").format(date).toString();
   }
 }

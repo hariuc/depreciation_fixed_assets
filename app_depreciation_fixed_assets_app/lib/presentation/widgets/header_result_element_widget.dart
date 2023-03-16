@@ -16,7 +16,7 @@ class HeaderResultElementWidget extends StatelessWidget {
       padding: const EdgeInsets.all(AppSize.s10),
       child: Text(
         LocaleKeys.dateFormat.tr(namedArgs: {
-          "dateFormat": DateFormatUtils().formatYear(date: headerResultEntity.dateTime)
+          "dateFormat": DateFormatUtils(date: headerResultEntity.dateTime).formatYear()
         }),
         style: StylesManager.getBoldStyle(fontSize: FontSize.s18),
       ),

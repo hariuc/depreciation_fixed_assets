@@ -38,7 +38,7 @@ class ResultElementWidget extends StatelessWidget {
         Text(
           LocaleKeys.dateFormat.tr(namedArgs: {
             "dateFormat":
-                DateFormatUtils().formatDateMonthYear(date: resultCalculateEntity.dateTime)
+                DateFormatUtils(date: resultCalculateEntity.dateTime).formatDateMonthYear()
           }),
           style: StylesManager.getRegularStyle(fontSize: FontSize.s16),
         )
