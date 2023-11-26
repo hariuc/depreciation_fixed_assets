@@ -4,17 +4,13 @@ version: 1.0.0+1
 publish_to: 'none'
 
 environment:
-  sdk: '>=3.0.6 <4.0.0'
+  sdk: '>=3.1.5 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  domain:
-    path: ../domain
-  common:
-    path: ../common
 
-  cupertino_icons: ^1.0.5
+  cupertino_icons: ^1.0.6
   equatable: ^2.0.5
   get_it: ^7.6.0
   json_annotation: ^4.8.1
@@ -23,6 +19,7 @@ dependencies:
   flutter_svg: ^1.1.6
   url_launcher: ^6.1.11
   share_plus: ^7.2.1
+  logger: ^1.4.0
 
 dev_dependencies:
   flutter_test:

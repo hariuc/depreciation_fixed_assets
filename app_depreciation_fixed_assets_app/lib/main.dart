@@ -1,4 +1,4 @@
-import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
+import 'package:depreciation_fixed_assets_app/app/constants/app_constants_index.dart';
 import 'package:depreciation_fixed_assets_app/depreciation_fixed_assets_app.dart';
 import 'package:depreciation_fixed_assets_app/simple_observer.dart';
 import 'package:easy_localization/easy_localization.dart';
