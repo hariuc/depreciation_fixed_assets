@@ -1,4 +1,4 @@
-part of app_constants_index;
+part of '../app_constants_index.dart';
 
 const String imagePath = "assets/images";
 
