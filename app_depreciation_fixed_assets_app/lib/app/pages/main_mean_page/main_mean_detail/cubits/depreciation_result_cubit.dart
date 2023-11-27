@@ -1,5 +1,5 @@
-import 'dart:developer';
 import 'package:depreciation_fixed_assets_app/common/calculate_depreciation_fixed_assets.dart';
+import 'package:depreciation_fixed_assets_app/common/logger_utils.dart';
 import 'package:depreciation_fixed_assets_app/domain/core/list_item.dart';
 import 'package:depreciation_fixed_assets_app/domain/enums/depreciation_method.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,7 +11,7 @@ class DepreciationResultCubit extends Cubit<List<ListItem>> {
       {required DepreciationMethod depreciationMethod,
       required double suma,
       required int yearDepreciation}) {
-    log("[DepreciationResultCubit]: changeValue");
+    LoggerUtils.info(message: "[${toString()}]: changeValue");
 
     final resultList =
         CalculateDepreciationFixedAssets(suma: suma, yearDepreciation: yearDepreciation)
