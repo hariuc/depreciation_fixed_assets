@@ -1,7 +1,7 @@
 import 'dart:developer';
-import 'package:common/calculate_depreciation_fixed_assets.dart';
-import 'package:domain/core/list_item.dart';
-import 'package:domain/enums/depreciation_method.dart';
+import 'package:depreciation_fixed_assets_app/common/calculate_depreciation_fixed_assets.dart';
+import 'package:depreciation_fixed_assets_app/domain/core/list_item.dart';
+import 'package:depreciation_fixed_assets_app/domain/enums/depreciation_method.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DepreciationResultCubit extends Cubit<List<ListItem>> {

@@ -1,7 +1,7 @@
 
+import 'package:depreciation_fixed_assets_app/domain/core/list_item.dart';
+import 'package:depreciation_fixed_assets_app/domain/modules/modules/main_mean/models/main_mean_index.dart';
 import 'package:depreciation_fixed_assets_app/generated/locale_keys.loc.dart';
-import 'package:domain/core/list_item.dart';
-import 'package:domain/modules/modules/main_mean/models/main_mean_index.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class CalculateDepreciationFixedAssets {

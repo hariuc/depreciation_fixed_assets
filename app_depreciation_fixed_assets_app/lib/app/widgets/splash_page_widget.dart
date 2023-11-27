@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
-import 'package:depreciation_fixed_assets_app/routing/app_routers.dart';
+import 'package:depreciation_fixed_assets_app/app/constants/app_constants_index.dart';
+import 'package:depreciation_fixed_assets_app/app/routing/app_routers.dart';
 import 'package:flutter/material.dart';
 
 class SplashPageWidget extends StatefulWidget {

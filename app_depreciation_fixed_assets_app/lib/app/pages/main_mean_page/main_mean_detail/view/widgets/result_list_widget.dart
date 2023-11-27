@@ -1,12 +1,11 @@
+import 'package:depreciation_fixed_assets_app/app/pages/main_mean_page/main_mean_detail/cubits/depreciation_result_cubit.dart';
+import 'package:depreciation_fixed_assets_app/app/widgets/header_result_element_widget.dart';
+import 'package:depreciation_fixed_assets_app/app/widgets/no_data_widget.dart';
+import 'package:depreciation_fixed_assets_app/app/widgets/result_element_widget.dart';
+import 'package:depreciation_fixed_assets_app/app/widgets/total_result_element_widget.dart';
+import 'package:depreciation_fixed_assets_app/domain/core/list_item.dart';
+import 'package:depreciation_fixed_assets_app/domain/modules/modules/main_mean/models/main_mean_index.dart';
 import 'package:depreciation_fixed_assets_app/generated/locale_keys.loc.dart';
-import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/depreciation_result_cubit.dart';
-import 'package:depreciation_fixed_assets_app/presentation/widgets/header_result_element_widget.dart';
-import 'package:depreciation_fixed_assets_app/presentation/widgets/no_data_widget.dart';
-import 'package:depreciation_fixed_assets_app/presentation/widgets/result_element_widget.dart';
-import 'package:depreciation_fixed_assets_app/presentation/widgets/total_result_element_widget.dart';
-import 'package:domain/core/list_item.dart';
-
-import 'package:domain/modules/modules/main_mean/models/main_mean_index.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

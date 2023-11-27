@@ -1,5 +1,5 @@
-import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
-import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/depreciation_method_cubit.dart';
+import 'package:depreciation_fixed_assets_app/app/constants/app_constants_index.dart';
+import 'package:depreciation_fixed_assets_app/app/pages/main_mean_page/main_mean_detail/cubits/depreciation_method_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

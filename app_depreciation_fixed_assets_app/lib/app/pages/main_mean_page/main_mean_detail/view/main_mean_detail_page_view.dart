@@ -1,16 +1,16 @@
 import 'dart:developer';
-import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
+import 'package:depreciation_fixed_assets_app/app/constants/app_constants_index.dart';
+import 'package:depreciation_fixed_assets_app/app/pages/main_mean_page/main_mean_detail/cubits/animation_opacity_cubit.dart';
+import 'package:depreciation_fixed_assets_app/app/pages/main_mean_page/main_mean_detail/cubits/depreciation_result_cubit.dart';
+import 'package:depreciation_fixed_assets_app/app/pages/main_mean_page/main_mean_detail/cubits/initial_cost_validator_cubit.dart';
+import 'package:depreciation_fixed_assets_app/app/pages/main_mean_page/main_mean_detail/cubits/lifetime_validator_cubit.dart';
+import 'package:depreciation_fixed_assets_app/app/pages/main_mean_page/main_mean_detail/view/widgets/initial_cost_widget.dart';
+import 'package:depreciation_fixed_assets_app/app/pages/main_mean_page/main_mean_detail/view/widgets/lifetime_widget.dart';
+import 'package:depreciation_fixed_assets_app/app/pages/main_mean_page/main_mean_detail/view/widgets/result_list_widget.dart';
+import 'package:depreciation_fixed_assets_app/app/widgets/button_widget.dart';
+import 'package:depreciation_fixed_assets_app/domain/enums/depreciation_method.dart';
 import 'package:depreciation_fixed_assets_app/generated/locale_keys.loc.dart';
-import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/animation_opacity_cubit.dart';
-import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/depreciation_result_cubit.dart';
-import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/initial_cost_validator_cubit.dart';
-import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/cubits/lifetime_validator_cubit.dart';
-import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/initial_cost_widget.dart';
-import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/lifetime_widget.dart';
-import 'package:depreciation_fixed_assets_app/presentation/pages/main_mean_page/main_mean_detail/view/widgets/result_list_widget.dart';
-import 'package:depreciation_fixed_assets_app/presentation/widgets/button_widget.dart';
 import 'package:depreciation_fixed_assets_app/common/show_message.dart';
-import 'package:domain/enums/depreciation_method.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 

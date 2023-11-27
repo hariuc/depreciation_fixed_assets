@@ -1,7 +1,7 @@
-import 'package:common/date_format_utils.dart';
-import 'package:depreciation_fixed_assets_app/constants/app_constants_index.dart';
+import 'package:depreciation_fixed_assets_app/app/constants/app_constants_index.dart';
+import 'package:depreciation_fixed_assets_app/common/date_format_utils.dart';
+import 'package:depreciation_fixed_assets_app/domain/modules/modules/main_mean/models/main_mean_index.dart';
 import 'package:depreciation_fixed_assets_app/generated/locale_keys.loc.dart';
-import 'package:domain/modules/modules/main_mean/models/main_mean_index.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
