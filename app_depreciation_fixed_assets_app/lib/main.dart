@@ -5,9 +5,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:depreciation_fixed_assets_app/domain/di/domain_di.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await domainInit();
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);

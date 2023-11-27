@@ -3,7 +3,7 @@ import 'package:depreciation_fixed_assets_app/domain/modules/modules/main_mean/u
 import 'package:get_it/get_it.dart';
 import 'package:logger/logger.dart';
 
-Future<void> init() async {
+Future<void> domainInit() async {
   final domainDi = GetIt.instance;
 
   //main mean
